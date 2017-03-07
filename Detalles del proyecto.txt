@@ -5,3 +5,5 @@ La página va a tener sus propios videojuegos y un apartado en el que se "scrape
 Y un chat de la comunidad para compartir y realizar preguntas (mirar intercambiosvirtuales.org).
 
 En la parte de administración se tendrá acceso a la base de datos para administrar artículos y gestión de usuarios.
+
+Frameworks utilizados y librerías: phaser.io, jquery, jquery ui.
