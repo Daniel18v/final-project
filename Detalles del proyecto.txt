@@ -1,5 +1,7 @@
-Vamos ha realizar una p·gina web de videojuegos con una pequeÒa red social para poder compartir juegos creados por la comunidad y ponerles un precio (market de aplicaciones).
-La p·gina va a tener sus propios videojuegos y un apartado en el que se scrapear·n videojuegos de otras plataformas con informaciÛn de ellos y enlaces a estos.
-Y un chat de la comunidad para compartir y realizar preguntas(mirar intercambiosvirtuales.org).
+Vamos a realizar una p√°gina web de videojuegos con una peque√±a red social para poder compartir juegos creados por la comunidad y ponerles un precio (market de aplicaciones).
 
-En la parte de administraciÛn se tendr· acceso a la base de datos para administrar artÌculos y gestiÛn de usuarios.
+La p√°gina va a tener sus propios videojuegos y un apartado en el que se "scrapear√°n" videojuegos de otras plataformas con informaci√≥n de ellos y enlaces a estos.
+
+Y un chat de la comunidad para compartir y realizar preguntas (mirar intercambiosvirtuales.org).
+
+En la parte de administraci√≥n se tendr√° acceso a la base de datos para administrar art√≠culos y gesti√≥n de usuarios.
