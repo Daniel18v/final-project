@@ -1,0 +1,5 @@
+Vamos ha realizar una página web de videojuegos con una pequeña red social para poder compartir juegos creados por la comunidad y ponerles un precio (market de aplicaciones).
+La página va a tener sus propios videojuegos y un apartado en el que se scrapearán videojuegos de otras plataformas con información de ellos y enlaces a estos.
+Y un chat de la comunidad para compartir y realizar preguntas(mirar intercambiosvirtuales.org).
+
+En la parte de administración se tendrá acceso a la base de datos para administrar artículos y gestión de usuarios.
