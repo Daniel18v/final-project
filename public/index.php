@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hola mundo</title>
+    <title>Proyecto Final</title>
 </head>
 <body>
 
