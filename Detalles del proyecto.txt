@@ -1,9 +1,9 @@
-Vamos a realizar una página web de videojuegos con una pequeña red social para poder compartir juegos creados por la comunidad y ponerles un precio (market de aplicaciones).
+Vamos a realizar una página web de videojuegos con una pequeña red social interior para poder compartir juegos creados por y para la comunidad y ponerles un precio (Market de aplicaciones).
 
-La página va a tener sus propios videojuegos y un apartado en el que se "scrapearán" videojuegos de otras plataformas con información de ellos y enlaces a estos.
+La página va a tener sus propios videojuegos y un apartado en el que se "scrapearán" videojuegos de otras plataformas con información  relacionada, y enlaces a los mismos.
 
-Y un chat de la comunidad para compartir y realizar preguntas (mirar intercambiosvirtuales.org).
+Además de eso, haremos un chat para la comunidad para que se puedan compartir y realizar preguntas (Véase intercambiosvirtuales.org).
 
-En la parte de administración se tendrá acceso a la base de datos para administrar artículos y gestión de usuarios.
+En la parte de administración se tendrá acceso a la base de datos para administrar artículos y gestión de usuarios, así como cualquier tema de administración (visitas, estadísticas, etc...).
 
-Frameworks utilizados y librerías: phaser.io, jquery, jquery ui, node.js, expres, socket.io.
+Frameworks utilizados y librerías: Phaser.io, jQuery, jQuery UI, Node.js, Express, Socket.io.
