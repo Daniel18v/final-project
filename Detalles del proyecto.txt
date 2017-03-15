@@ -2,8 +2,12 @@ Vamos a realizar una página web de videojuegos con una pequeña red social inte
 
 La página va a tener sus propios videojuegos y un apartado en el que se "scrapearán" videojuegos de otras plataformas con información  relacionada, y enlaces a los mismos.
 
-Además de eso, haremos un chat para la comunidad para que se puedan compartir y realizar preguntas (Véase intercambiosvirtuales.org).
+La aplicación encargada de extraer el contenido e insertarlo en la base de datos se realizará con el interprete Node.js y casperJs.
+
+Además de eso, haremos un chat para la comunidad para que se puedan compartir y realizar preguntas.
 
 En la parte de administración se tendrá acceso a la base de datos para administrar artículos y gestión de usuarios, así como cualquier tema de administración (visitas, estadísticas, etc...).
 
-Frameworks utilizados y librerías: Phaser.io, jQuery, jQuery UI, Node.js, Express, Socket.io.
+Lenguajes de programación: PHP y javascript.
+
+Frameworks utilizados y librerías: Phaser.io, jQuery, jQuery UI, Node.js, casper.js.
