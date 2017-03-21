@@ -1,3 +1,4 @@
+<?php $saludo = "hola mundo";?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +6,6 @@
     <title>Hola mundo</title>
 </head>
 <body>
-
+	<?php echo $saludo; ?>
 </body>
 </html>
