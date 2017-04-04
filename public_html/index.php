@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Proyecto Final</title>
-</head>
-<body>
+<?php
+require_once __DIR__ . "/src/controllers/articlesController.php";
 
-</body>
-</html>
+$controller = new articlesController();
+$controller->index();
