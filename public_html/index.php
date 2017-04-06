@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . "/src/controllers/articlesController.php";
+
+use Main\controllers\articlesController;
 
 $controller = new articlesController();
 $controller->index();

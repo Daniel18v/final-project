@@ -1,5 +1,7 @@
 <?php
 
+
+namespace Main\controllers;
 /**
  * Description of articlesController
  *

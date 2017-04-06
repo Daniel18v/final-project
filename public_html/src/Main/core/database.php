@@ -7,6 +7,8 @@
  */
 require_once __DIR__ . "/config.php";
 
+namespace Main\core;
+
 class DB {
 
     private $db;

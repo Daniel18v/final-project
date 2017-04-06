@@ -3,6 +3,8 @@
 require_once "/../config/database.php";
 require_once "/../config/constants.php";
 
+namespace Main\models;
+
 class articlesModel {
     private $db;
     private $articles;

@@ -1,0 +1,17 @@
+{
+    "name": "vendor/final-project",
+    "description": "Description of project final-project.",
+    "authors": [
+        {
+            "name": "Cheke",
+            "email": "xekevara@gmail.com"
+        }
+       
+    ],
+    "autoload": {
+        "psr-0": {
+            "Main": "src/"
+        }
+    },
+    "require": {}
+}
