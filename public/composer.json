@@ -1,16 +1,15 @@
 {
     "name": "vendor/final-project",
-    "description": "Description of project final-project.",
+    "description": "FreeBird.",
     "authors": [
         {
             "name": "Cheke",
             "email": "xekevara@gmail.com"
         }
-       
     ],
     "autoload": {
-        "psr-0": {
-            "Main": "src/"
+        "psr-4" : {
+            "FreeBird\\" :  "src/"
         }
     },
     "require": {}

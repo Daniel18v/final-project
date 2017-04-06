@@ -5,16 +5,15 @@
  *
  * @author Cheke
  */
-require_once __DIR__ . "/config.php";
+namespace FreeBird\core;
+require_once "/../../config/config.php";
 
-namespace Main\core;
-
-class DB {
+class Database {
 
     private $db;
 
     function __construct() {
-        $this->db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $this->db = new \mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         if ($this->db->connect_errno) {
             echo "Fail to connect to MySQL:" . $this->db->connect_errno;
             return;

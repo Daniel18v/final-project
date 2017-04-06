@@ -1,16 +1,17 @@
 <?php
 
-require_once "/../config/database.php";
-require_once "/../config/constants.php";
+namespace FreeBird\models; 
 
-namespace Main\models;
+use FreeBird\core\Database;
 
-class articlesModel {
+require_once "/../../config/constants.php";
+
+class ArticlesModel {
     private $db;
     private $articles;
     
     function __construct() {
-        $this->db = new DB();
+        $this->db = new Database();
         $this->articles = array();
     }
     
