@@ -1,0 +1,10 @@
+﻿Siempre usar HTML PHP en una línea. Nunca usar bloques de PHP.
+Siempre escapar de las variables potencialmente peligrosas antes de la salida utilizando las funciones de escape incorporadas. Más información de cómo escapar, aquí → http://platesphp.com/templates/escaping/
+Siempre usar la sintáxis corta (<?=) para la salida de variables. Para otro código en línea de PHP, user la etiqueta completa <?php. No usar etiquetas cortas. → http://us3.php.net/manual/en/ini.core.php#ini.short-open-tag
+Siempre usar alternativas sintácticas (http://php.net/manual/en/control-structures.alternative-syntax.php) para estructuras de control, las plantillas están diseñadas para ser más legibles.
+Nunca usar llaves de PHP.
+Solo tener una sola declaración en cada etiqueta PHP.
+Evitar el uso del punto y coma. No son necesarias cuando es una sola etiqueta de PHP.
+Nunca usar el operador. Las plantillas no deberían interactuar con las clases de esa forma.
+Nunca usar las estructuras de control: for, while o switch. En su lugar usar if y foreach.
+Evitar la asignación de variables.
