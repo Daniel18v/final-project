@@ -1,0 +1,16 @@
+The splash screen shown on startup is created using
+
+TMS Software TAdvSmoothSplashScreen component
+
+You can get a trial version here: https://www.tmssoftware.com/site/advsmoothsplashscreen.asp
+
+
+==========================
+
+
+If you do not have this component, you can easily remove it by editing uMain.pas like so:
+
+removing "AdvSmoothSplashScreen" from uses list
+
+Editing the FormCreate procedure for the main window and taking out any references to that component
+(make sure you don't remove any critical lines required for proper startup)

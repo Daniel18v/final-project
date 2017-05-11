@@ -1,0 +1,8 @@
+*.psf svneol=native#text/plain
+*.eqn svneol=native#text/plain
+*.pds svneol=native#text/plain
+*.abl svneol=native#text/plain
+*.syn svneol=native#text/plain
+*.jed -text svneol=unset#application/octet-stream
+jeds/pal16p2/pal16p2.jed text=auto svneol=native#text/plain
+jeds/pal16rp8/pal16rp8.jed text=auto svneol=native#text/plain

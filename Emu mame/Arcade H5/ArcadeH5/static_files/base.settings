@@ -1,0 +1,77 @@
+[ARCADE]
+cabinet.name = KonKade
+
+; Whether to invoke Arcade.___() functions in internal browser
+browser.send_js = 1
+
+[Player 1]
+Joystick.left = VK_LEFT
+Joystick.right = VK_RIGHT
+Joystick.up = VK_UP
+Joystick.down = VK_DOWN
+
+Joystick.z-up = Z
+Joystick.z-down = Z
+
+Joystick.button.0 = A
+Joystick.button.1 = B
+Joystick.button.2 = C
+Joystick.button.3 = D
+Joystick.button.4 = 1
+Joystick.button.5 = 2
+Joystick.button.6 = 3
+Joystick.button.7 = 4
+Joystick.button.8 = Y
+Joystick.button.9 = U
+Joystick.button.10 = I
+Joystick.button.11 = O
+
+
+
+
+[Player 2]
+Joystick.left = VK_LEFT
+Joystick.right = VK_RIGHT
+Joystick.up = VK_UP
+Joystick.down = VK_DOWN
+
+Joystick.z-up = Z
+Joystick.z-down = Z
+
+Joystick.button.0 = E
+Joystick.button.1 = F
+Joystick.button.2 = G
+Joystick.button.3 = H
+Joystick.button.4 = 5
+Joystick.button.5 = 6
+Joystick.button.6 = 7
+Joystick.button.7 = 8
+Joystick.button.8 = J
+Joystick.button.9 = K
+Joystick.button.10 = L
+Joystick.button.11 = M
+
+
+
+
+[MAIN]
+
+ro.mythweb.arcadeh5.borders.enabled=1
+ro.mythweb.arcadeh5.debug.enabled=0
+
+app.window.min_width=990
+app.window.min_height=600
+app.window.state=maximized
+app.window.width=1358
+app.window.height=820
+
+log.last_run.date=09.07.2015
+log.last_run.time=17:30:48
+
+app.restart.cmd = ShutdownH5.exe
+app.restart.param = -restart
+
+app.shutdown.cmd = ShutdownH5.exe
+app.shutdown.param = -shutdown
+
+
