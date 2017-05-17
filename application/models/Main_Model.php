@@ -11,7 +11,7 @@
  *
  * @author Cheke
  */
-class Games_Model extends CI_Model {
+class Main_Model extends CI_Model {
     /*
      * Load database
      */

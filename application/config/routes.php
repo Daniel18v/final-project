@@ -49,10 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Games_Controller';
+$route['default_controller'] = 'Main_Controller';
 $route['404_override'] = 'errors/page_missing';
-$route['translate_uri_dashes'] = FALSE; 
-$route['prueba'] = 'Try_Controller';
-$route['pruebas'] = 'Try_Controller'; 
-$route['pruebas/herencia'] = 'Try_Controller/inheritance';
-$route['prueba/herencia'] = 'Try_Controller/inheritance';
+$route['translate_uri_dashes'] = FALSE;
+$route['probando'] = 'Main_Controller/probando';
+$route['probando/(:any)'] = 'Main_Controller/probando/$1';
+$route['chat'] = 'Main_Controller/chat';
