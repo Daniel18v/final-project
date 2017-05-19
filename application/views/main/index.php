@@ -101,12 +101,22 @@
                     <h3 class="panel-title">Chat</h3>
                 </div>
                 <div class="panel-body">
-                <?php $this->insert("chat::chat") ?>
+                    <?= (!isset($_SESSION['nombre'])) ? $this->insert("chat::chat") : "" ?>
                 </div>
             </div>
         </div>
     </div>
     <div class="hr-margin-bottom-10"></div>
+
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <?= $this->insert("structure::signin") ?>
+            <?= $this->insert("structure::login") ?>
+        </div>
+    </div>
 
 </div>
 

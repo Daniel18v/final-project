@@ -7,4 +7,4 @@ Solo tener una sola declaración en cada etiqueta PHP.
 Evitar el uso del punto y coma. No son necesarias cuando es una sola etiqueta de PHP.
 Nunca usar el operador. Las plantillas no deberían interactuar con las clases de esa forma.
 Nunca usar las estructuras de control: for, while o switch. En su lugar usar if y foreach.
-Evitar la asignación de variables.
+Evitar la asignación de variables. 

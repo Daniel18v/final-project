@@ -16,9 +16,11 @@
 <body class="body">
 
 <?= $this->section("section") ?>
-
-<footer class="footer">
+<div class="top-footer">
     <?php $this->insert("structure::footer") ?>
+</div>
+<footer class="footer">
+    <?php $this->insert("structure::bottom-footer") ?>
 </footer>
 </body>
 </html>

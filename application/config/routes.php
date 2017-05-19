@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['probando'] = 'Main_Controller/probando';
 $route['probando/(:any)'] = 'Main_Controller/probando/$1';
 $route['chat'] = 'Main_Controller/chat';
+$route['emulador'] = 'Main_Controller/emulator';

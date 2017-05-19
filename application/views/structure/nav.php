@@ -9,7 +9,7 @@
     </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+            <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
             <li><a href="#about">Tienda</a></li>
             <li><a href="#contact">Juegos</a></li>
             <li class="dropdown">
