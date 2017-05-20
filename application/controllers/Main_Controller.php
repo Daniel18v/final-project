@@ -31,11 +31,34 @@ class Main_Controller extends MY_Controller {
         }
         echo $this->templates->render("main::prueba");
     }
+
     public function chat() {
         echo $this->templates->render('chat::chat');
     }
-    public function emulator() {
 
-        echo $this->templates->render('main::prueba');
+    public function emulator($p = FALSE, $roms = FALSE) {
+        switch (strtolower($p)) {
+            case "nes":
+                echo $this->templates->render('emulator::jsNES');
+                break;
+            case "sms":
+                echo $this->templates->render('emulator::jsSMS');
+                break;
+            default: show_404();
+        }
+
+        //$data = $this->Main_Model->get_id_roms($roms);
+        //echo $this->templates->render('emulator::jsNES', $data);
+
+
+
+    }
+
+    public function games($p = FALSE) {
+        echo $this->templates->render('main::games');
+    }
+
+    public function shop() {
+        echo $this->templates->render('main::shop');
     }
 }

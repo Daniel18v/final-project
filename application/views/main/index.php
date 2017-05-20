@@ -6,7 +6,6 @@
 
 <?php $this->start('nav') ?>
 <?php $this->insert("structure::nav") ?>
-
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
@@ -72,7 +71,7 @@
                             <h3 class="panel-title">Yo</h3>
                         </div>
                         <div class="panel-body">
-                           Aquí van cosas
+                            Aquí van cosas
                         </div>
                     </div>
                     <div class="panel panel-info">
@@ -86,13 +85,13 @@
                 </div>
             </div>
 
-
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">Afiliados</h3>
                 </div>
                 <div class="panel-body">
-                    <a href="http://animeomega.es"><img src="http://i.imgbox.com/nxJzSEbl.jpg" class="img-responsive center-block"></a>
+                    <a href="http://animeomega.es"><img src="http://i.imgbox.com/nxJzSEbl.jpg"
+                                                        class="img-responsive center-block"></a>
                 </div>
             </div>
 
@@ -106,18 +105,9 @@
             </div>
         </div>
     </div>
-    <div class="hr-margin-bottom-10"></div>
-
-
-
-
-    <div class="row">
-        <div class="col-lg-12">
-            <?= $this->insert("structure::signin") ?>
-            <?= $this->insert("structure::login") ?>
-        </div>
-    </div>
-
 </div>
+</div>
+<div class="hr-margin-bottom-10"></div>
+
 
 <?php $this->stop() ?>

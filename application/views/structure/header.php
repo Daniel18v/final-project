@@ -1,7 +1,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-6-md col-xs-4">
-            <img src="/images/header.png" class="img-responsive pull-left" alt="Cabecera"/>
+            <a href="<?= site_url() ?>">
+                <img src="/images/header.png" class="img-responsive pull-left" alt="Cabecera"/>
+            </a>
         </div>
         <div class="col-6-md col-xs-8">
             <p>

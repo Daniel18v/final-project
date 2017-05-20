@@ -26,7 +26,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
     background: #33ccff url("/images/background.jpg") no-repeat top center fixed;
     background-size: cover;
 }
@@ -76,8 +76,7 @@ body > .container {
 .mycontent {
     padding-left:10px;
     padding-top: 40px;
-    padding-bottom: 100px;
-    margin-bottom: 0;
+    padding-bottom: 200px;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -225,3 +224,15 @@ code {
 }
 
 /* FIN DE MODELS */
+
+/* CONSOLES */
+
+.consoles {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* GALAGA */
+
+#myGLCanvas {
+    margin: 0 auto;
+}

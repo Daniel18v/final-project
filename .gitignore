@@ -19,6 +19,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 # IDE Files
 #-------------------------
 /nbproject/
+/user_guide/
+/tools/
+/psd/
 .idea/*
 
 ## Sublime Text cache files
@@ -27,9 +30,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
-/psd/
-/vendor/
-/application/vendor
-/user_guide
-/tools
-/sparks
+/application/vendor/
+vhosts/
+
+*.rar
+
+*.gz

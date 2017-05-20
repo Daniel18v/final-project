@@ -10,15 +10,15 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-            <li><a href="#about">Tienda</a></li>
-            <li><a href="#contact">Juegos</a></li>
+            <li><a href="/tienda">Tienda</a></li>
+            <li><a href="/juegos">Juegos</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                <a href="/social" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                    aria-expanded="false">Social <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Noticias</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Foro</a></li>
+                    <li><a href="/noticias">Noticias</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/foro">Foro</a></li>
                 </ul>
 
             </li>
