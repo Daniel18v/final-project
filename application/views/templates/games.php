@@ -2,11 +2,11 @@
 <html lang="es">
 
 <head>
-    <?php $this->section("structure::head") ?>
+    <?php $this->insert("structure::head") ?>
 </head>
 
 <header class="header">
-    <?= isset($_SESSION['user']) ? $this->section("header") : "" ?>
+    <?= (!isset($_SESSION['user'])) ? $this->section("header") : "" ?>
 </header>
 
 <nav class="navbar navbar-inverse">

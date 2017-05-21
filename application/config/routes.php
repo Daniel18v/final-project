@@ -49,15 +49,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Main_Controller';
+$route['default_controller'] = 'Main_controller';
 $route['404_override'] = 'errors/page_missing';
 $route['translate_uri_dashes'] = FALSE;
-$route['probando'] = 'Main_Controller/probando';
-$route['probando/(:any)'] = 'Main_Controller/probando/$1';
-$route['chat'] = 'Main_Controller/chat';
-$route['emulador'] = 'Main_Controller/emulator';
-$route['emulador/(:any)'] = 'Main_Controller/emulator/$1';
-$route['emulador/(:any)/(:any)'] = 'Main_Controller/emulator/$1/$2';
-$route['juegos'] = 'Main_Controller/games';
-$route['juegos/(:any)'] = 'Main_Controller/games/$1';
-$route['tienda'] = 'Main_Controller/shop';
+$route['probando'] = 'Main_controller/probando';
+$route['probando/(:any)'] = 'Main_controller/probando/$1';
+$route['chat'] = 'Main_controller/chat';
+$route['emulador'] = 'Main_controller/emulator';
+$route['emulador/(:any)'] = 'Main_controller/emulator/$1';
+$route['emulador/(:any)/(:any)'] = 'Main_controller/emulator/$1/$2';
+$route['juegos'] = 'Main_controller/games';
+$route['juegos/(:any)'] = 'Main_controller/games/$1';
+$route['tienda'] = 'Main_controller/shop';
+$route['login'] = 'User_controller/login';
+$route['salir'] = 'User_controller/logout';

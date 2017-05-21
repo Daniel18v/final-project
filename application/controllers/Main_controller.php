@@ -1,14 +1,13 @@
-<?php
+<?
 
 defined("BASEPATH") or exit("No direct script access allowed");
 
-class Main_Controller extends MY_Controller {
+class Main_controller extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Main_Model');
-        $this->load->helper('url');
-        $this->load->library('session');
+        $this->load->model('main_model');
+        $this->load->library('encryption');
     }
 
     /*
@@ -17,14 +16,17 @@ class Main_Controller extends MY_Controller {
      */
 
     public function index() {
-        $data['all'] = $this->Main_Model->get_all();
+
+        $data['all']   = $this->main_model->get_all();
         $data['title'] = "FreeBird · Juega y a volar";
         if (empty($data['all'])) {
             show_404();
         }
         echo $this->templates->render('main::index', $data);
     }
-    public function probando($p = FALSE) {
+
+
+    public function probando($p = false) {
         echo "Hola tú";
         if ($p == 1) {
             echo " qué ase?";
@@ -36,7 +38,7 @@ class Main_Controller extends MY_Controller {
         echo $this->templates->render('chat::chat');
     }
 
-    public function emulator($p = FALSE, $roms = FALSE) {
+    public function emulator($p = false, $roms = false) {
         switch (strtolower($p)) {
             case "nes":
                 echo $this->templates->render('emulator::jsNES');
@@ -44,17 +46,15 @@ class Main_Controller extends MY_Controller {
             case "sms":
                 echo $this->templates->render('emulator::jsSMS');
                 break;
-            default: show_404();
+            default:
+                show_404();
         }
 
-        //$data = $this->Main_Model->get_id_roms($roms);
+        //$data = $this->Main_model->get_id_roms($roms);
         //echo $this->templates->render('emulator::jsNES', $data);
-
-
-
     }
 
-    public function games($p = FALSE) {
+    public function games($p = false) {
         echo $this->templates->render('main::games');
     }
 

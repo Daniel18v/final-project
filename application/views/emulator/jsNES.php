@@ -1,4 +1,4 @@
-<?php $this->layout("templates::master") ?>
+<?php $this->layout("templates::games") ?>
 
 <?php $this->start('header') ?>
 <?php $this->insert("structure::header") ?>

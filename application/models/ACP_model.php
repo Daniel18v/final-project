@@ -1,5 +1,5 @@
 <?php
-class ACP_Model extends CI_Model {
+class ACP_model extends CI_Model {
 
     public function __construct() {
         $this->load->database();

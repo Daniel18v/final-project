@@ -12,11 +12,11 @@
                     <h4 class="modal-title text-center">Iniciar sesión</h4>
                 </div>
                 <div class="modal-body">
-                    <label for="email"><span class="glyphicon glyphicon-envelope"></span> Correo electrónico</label>
-                    <input type="text" class="text" placeholder="Introduce un email" name="email" required>
+                    <label for="user"><span class="glyphicon glyphicon-user"></span> Usuario</label>
+                    <input type="text" class="text" placeholder="Introduce un usuario" name="user" required>
 
-                    <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Repetir contraseña</label>
-                    <input type="password" placeholder="Introduce contraseña" name="psw" required>
+                    <label for="pass"><span class="glyphicon glyphicon-eye-open"></span> Repetir contraseña</label>
+                    <input type="password" placeholder="Introduce contraseña" name="pass" required>
 
                 </div>
                 <div class="modal-footer text-center">
@@ -28,3 +28,9 @@
         </div>
     </form>
 </div>
+
+<!--<div class="alert alert-danger" role="alert">-->
+<!--    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>-->
+<!--    <span class="sr-only">Error:</span>-->
+<!--    --><?//= $this->session->flashdata('error') ?>
+<!--</div>-->

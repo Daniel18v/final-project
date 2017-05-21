@@ -1,2 +1,2 @@
-<?= $this->insert("structure::signin") ?>
-<?= $this->insert("structure::login") ?>
+<?= $this->insert("login::signin") ?>
+<?= $this->insert("login::login") ?>

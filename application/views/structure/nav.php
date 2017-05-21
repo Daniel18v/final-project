@@ -25,10 +25,12 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <?= (isset($_SESSION)) ? "" :
-                    "<li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Mi cuenta</a></li>" ?>
-            <?= (isset($_SESSION)) ? "" :
-                    "<li><a href=\"#\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Carrito</a></li>" ?>
+            <?= (!isset($_SESSION['user'])) ? "" :
+                    "<li><a href='#'><span class='glyphicon glyphicon-user'></span> " .  $_SESSION['user'] . "</a></li>" ?>
+            <?= (!isset($_SESSION['user'])) ? "" :
+                    "<li><a href='#'><span class='glyphicon glyphicon-shopping-cart'></span> Carrito</a></li>" ?>
+            <?= (!isset($_SESSION['user'])) ? "" :
+                    "<li><a href=" . site_url() . "salir><span class='glyphicon glyphicon glyphicon-log-out'></span> Salir</a></li>"?>
         </ul>
         <form class="navbar-form navbar-right" role="search">
             <div class="form-group input-group">

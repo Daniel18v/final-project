@@ -100,7 +100,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,10 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+
+$config['encryption_key'] = '71d7f6d0a3b94c50782fc7486070d576';
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -377,13 +380,14 @@ $config['encryption_key'] = '';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
-$config['sess_driver'] = 'freebird';
-$config['sess_cookie_name'] = 'freebird_session';
+$config['sess_driver'] = 'database';
+$config['sess_cookie_name'] = 'local';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = 'ci_sessions';
+$config['sess_save_path'] = 'sessions';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
+
 
 /*
 |--------------------------------------------------------------------------
