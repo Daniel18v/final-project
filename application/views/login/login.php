@@ -13,10 +13,10 @@
                 </div>
                 <div class="modal-body">
                     <label for="user"><span class="glyphicon glyphicon-user"></span> Usuario</label>
-                    <input type="text" class="text" placeholder="Introduce un usuario" name="user" required>
+                    <input type="text" class="text form-control" placeholder="Introduce un usuario" name="user" required>
 
                     <label for="pass"><span class="glyphicon glyphicon-eye-open"></span> Repetir contraseña</label>
-                    <input type="password" placeholder="Introduce contraseña" name="pass" required>
+                    <input type="password" class="form-control" placeholder="Introduce contraseña" name="pass" required>
 
                 </div>
                 <div class="modal-footer text-center">

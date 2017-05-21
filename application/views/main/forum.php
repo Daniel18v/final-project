@@ -9,5 +9,5 @@
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
-Tienda
+Foro
 <?php $this->stop() ?>

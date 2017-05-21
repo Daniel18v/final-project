@@ -37,28 +37,19 @@ class Main_controller extends MY_Controller {
     public function chat() {
         echo $this->templates->render('chat::chat');
     }
-
-    public function emulator($p = false, $roms = false) {
-        switch (strtolower($p)) {
-            case "nes":
-                echo $this->templates->render('emulator::jsNES');
-                break;
-            case "sms":
-                echo $this->templates->render('emulator::jsSMS');
-                break;
-            default:
-                show_404();
-        }
-
-        //$data = $this->Main_model->get_id_roms($roms);
-        //echo $this->templates->render('emulator::jsNES', $data);
-    }
-
-    public function games($p = false) {
-        echo $this->templates->render('main::games');
-    }
-
     public function shop() {
         echo $this->templates->render('main::shop');
+    }
+    public function social() {
+        echo $this->templates->render('main::social');
+    }
+    public function news() {
+        echo $this->templates->render('main::news');
+    }
+    public function blog() {
+        echo $this->templates->render('main::blog');
+    }
+    public function forum() {
+        echo $this->templates->render('main::forum');
     }
 }

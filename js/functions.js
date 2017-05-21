@@ -1,14 +1,26 @@
-$(document).ready(function() {
+$(document).ready(function () {
     /* MODELS */
-    $("#signin").click(function(){
-        $("#formSignin").modal();
-    });
-    $("#login").click(function() {
-       $("#formLogin").modal();
+
+    $(".signup").click(function () {
+        $("#formSignup").modal();
     });
 
-    /* GALAGA */
-    $("#galaga").ready(function() {
-        main();
+    $(".login").click(function () {
+        $("#formLogin").modal();
     });
+    $(".nes").click(function() {
+        $(location).attr('href', 'emulador/nes');
+    });
+
+    $(".sms").click(function() {
+        $(location).attr('href', 'emulador/sms');
+    });
+
+
+    /* GALAGA */
+    if ($(location).attr('href') === 'http://freebird.ddns.net/juegos/galaga') {
+        $("#galaga").ready(function () {
+            main();
+        });
+    };
 });

@@ -12,7 +12,7 @@ class Login {
 
     public function check_login() {
 
-        echo "<pre>" . print_r($this->ci->session->userdata('user'), true)  . "</pre>";
+//        echo "<pre>" . print_r($this->ci->session->userdata('user'), true)  . "</pre>";
 //        if (!$this->ci->session->userdata('user')) {
 //            redirect('/emulador');
 //		} else {

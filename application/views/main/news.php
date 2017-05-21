@@ -9,5 +9,6 @@
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
-Tienda
+Noticias
 <?php $this->stop() ?>
+

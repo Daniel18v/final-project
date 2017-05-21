@@ -68,18 +68,18 @@
                 <div class="panel-body">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Yo</h3>
+                            <h3 class="panel-title">Trabajo de final de curso</h3>
                         </div>
                         <div class="panel-body">
-                            Aquí van cosas
+                            <p>Esta página está es un trabajo de final de curso.<br />Aún se encuentra en construcción.</p>
                         </div>
                     </div>
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Tú</h3>
+                            <h3 class="panel-title">Novedades próximas</h3>
                         </div>
                         <div class="panel-body">
-                            Aquí van cosas
+                            <p>Pronto se podrá jugar a múltiples juegos tanto de emulador como de HTML5 ;)</p>
                         </div>
                     </div>
                 </div>
