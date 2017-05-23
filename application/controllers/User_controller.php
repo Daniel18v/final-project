@@ -26,25 +26,21 @@ class User_controller extends MY_Controller {
         $this->upload->initialize($config);
         $file = $data['avatar'];
 
-        echo "<pre>" .  print_r($data, true) . "</pre>";
-        echo "<pre>" .  print_r($this->upload->do_upload('userfile'), true) . "</pre>";
-
         if ($data['avatar'] === NULL) {
             $data['avatar'] = "images/avatars/no-avatar.png";
         } else if ($this->upload->do_upload('userfile')) {
             $data = array('upload_data' => $this->upload->data());
         }
-        echo "<pre>" .  print_r($data['upload_data'], true) . "</pre>";
-
+//        echo "<pre>" .  print_r($data['upload_data'], true) . "</pre>";
 
 
         if ($this->input->post('pass') === $this->input->post('pass-verify')) {
             $sign = $this->user_model->signup($data);
             $this->login($sign);
             echo $data['avatar'];
-            //redirect(base_url());
+            redirect(base_url());
         } else {
-            //redirect(base_url());
+            redirect(base_url());
         }
     }
 

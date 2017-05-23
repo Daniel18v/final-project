@@ -23,7 +23,10 @@ class Main_model extends CI_Model {
     /*
      * Returns all rows. 
      */ 
-
+    public function  get_rom($name_url, $type) {
+        $query = $this->db->get_where('roms', array('name-url' => $name_url, 'type' => $type), 1);
+        return $query->result_array();
+    }
     public function get_all() {
         $query = $this->db->get("roms");
         return $query->result_array();

@@ -36,3 +36,4 @@ vhosts/
 *.rar
 
 *.gz
+/application/vendor/

@@ -69,3 +69,4 @@ $route['login'] = 'User_controller/login';
 $route['salir'] = 'User_controller/logout';
 $route['registro'] = 'User_controller/signup';
 $route['subida'] = 'Upload_controller/upload';
+$route['admin'] = 'ACP_controller/admin';

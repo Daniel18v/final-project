@@ -10,6 +10,7 @@
 
 <?php $this->start('section') ?>
 <div class="container-fluid mycontent">
+<?php if($rom): ?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -102,19 +103,14 @@
     var nes;
     $(function() {
         nes = new JSNES({
-            'ui': $('#emulator').JSNESUI({
-                "Homebrew": [
-                    ['Concentration Room', '/apps/jsnes/roms/croom/croom.nes']
-                ]
-            })
+            'ui': $('#emulator').JSNESUI({"homebrew": '<?= $rom[0]['rom'] ?>'})
         });
     });
+
 </script>
-<!--[if IE]>
-<script type="text/vbscript" src="source/jsnes-ie-hacks.vbscript"></script>
-<![endif]-->
 
 </body>
 </html>
 </div>
+<?php endif ?>
 <?php $this->stop() ?>

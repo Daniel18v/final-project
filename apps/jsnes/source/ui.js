@@ -191,7 +191,7 @@ if (typeof jQuery !== 'undefined') {
                     var self = this;
                     self.updateStatus("Downloading...");
                     $.ajax({
-                        url: encodeURI('/apps/jsnes/roms/croom/croom.nes'),//self.romSelect.val()
+                        url: encodeURI(roms.homebrew),//self.romSelect.val()
                         xhr: function() {
                             var xhr = $.ajaxSettings.xhr();
                             if (typeof xhr.overrideMimeType !== 'undefined') {

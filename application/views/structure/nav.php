@@ -31,6 +31,10 @@
                     "<li><a href='#'><span class='glyphicon glyphicon-shopping-cart'></span> Carrito</a></li>" ?>
             <?= (!isset($_SESSION['user'])) ? "" :
                     "<li><a href=" . site_url() . "salir><span class='glyphicon glyphicon glyphicon-log-out'></span> Salir</a></li>"?>
+            <?php if (isset($_SESSION['user'])) : ?>
+            <?= ($_SESSION['user'] !=='Chungoku') ? "" :
+                "<li><a href=" . site_url() . "admin><span class='glyphicon glyphicon-wrench'></span> Admin</a></li>"?>
+            <?php endif ?>
         </ul>
         <form class="navbar-form navbar-right" role="search">
             <div class="form-group input-group">

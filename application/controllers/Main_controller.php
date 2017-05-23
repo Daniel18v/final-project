@@ -1,4 +1,4 @@
-<?
+<?php
 
 defined("BASEPATH") or exit("No direct script access allowed");
 
@@ -10,28 +10,9 @@ class Main_controller extends MY_Controller {
         $this->load->library('encryption');
     }
 
-    /*
-     * Index is the main page, and in it charges
-     * all titles for show them in the view.
-     */
-
     public function index() {
-
-        $data['all']   = $this->main_model->get_all();
         $data['title'] = "FreeBird · Juega y a volar";
-        if (empty($data['all'])) {
-            show_404();
-        }
-        echo $this->templates->render('main::index', $data);
-    }
-
-
-    public function probando($p = false) {
-        echo "Hola tú";
-        if ($p == 1) {
-            echo " qué ase?";
-        }
-        echo $this->templates->render("main::prueba");
+        echo $this->templates->render('main::index', ['session' => $this]);
     }
 
     public function chat() {

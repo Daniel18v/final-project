@@ -33,11 +33,23 @@
                                 </div>
                             </div>
                         </div>
+                    <div class="col-lg-3">
+
+                            <div class="thumbnail">
+                                <img src="/images/html5/flappybird.jpg"
+                                     alt="flappybird">
+                                <div class="caption">
+                                    <h3>Flappybird</h3>
+                                    <p>Juego con pajaritos y tubos xDD</p>
+                                    <p><a href="<?= site_url('juegos/flappybird') ?>" class="btn btn-primary" role="button">Jugar</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-                </div>
             </div>
+
+        </div>
         </div>
         <div class="col-lg-6">
             <div class="panel panel-info">
