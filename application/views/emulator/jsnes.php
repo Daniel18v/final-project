@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <?php $this->layout("templates::games") ?>
 
 <?php $this->start('header') ?>
@@ -10,7 +12,6 @@
 
 <?php $this->start('section') ?>
 <div class="container-fluid mycontent">
-<?php if($rom): ?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -40,7 +41,7 @@
 
 <div id="emulator"></div>
 
-<h2>Controls</h2>
+<h2>Controles</h2>
 <table id="controls">
     <tr>
         <th>Button</th>
@@ -88,22 +89,21 @@
     </tr>
 </table>
 
-<script src="/apps/jsnes/lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/nes.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/utils.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/cpu.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/keyboard.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/mappers.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/papu.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/ppu.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/rom.js" type="text/javascript" charset="utf-8"></script>
-<script src="/apps/jsnes/source/ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/nes.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/cpu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/mappers.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/papu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/ppu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/rom.js" type="text/javascript" charset="utf-8"></script>
+<script src="/apps/emulators/jsnes/source/ui.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    var nes;
     $(function() {
-        nes = new JSNES({
-            'ui': $('#emulator').JSNESUI({"homebrew": '<?= $rom[0]['rom'] ?>'})
+        var nes = new JSNES({
+            'ui': $('#emulator').JSNESUI({"homebrew": '/apps/emulators/jsnes/roms/<?= $rom ?>.nes'})
         });
     });
 
@@ -112,5 +112,4 @@
 </body>
 </html>
 </div>
-<?php endif ?>
 <?php $this->stop() ?>

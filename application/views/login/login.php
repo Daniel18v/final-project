@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <div class="container">
     <!-- Modal -->
     <form id="formLogin" class="up modal fade " action="<?= site_url("/login") ?>" method="post" role="dialog">
@@ -32,5 +34,5 @@
 <!--<div class="alert alert-danger" role="alert">-->
 <!--    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>-->
 <!--    <span class="sr-only">Error:</span>-->
-<!--    < ?= $this->session->flashdata('error') ?> -->
+<!--    < ?= $sess->session->flashdata('error') ?>-->
 <!--</div>-->

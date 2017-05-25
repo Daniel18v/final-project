@@ -141,7 +141,7 @@ if (window['$']) {
           } else {
             self.main.stop();
             self.updateStatus('Paused');
-            self.buttons.start.attr('value', 'Start');
+            self.buttons.start.attr('value', 'resume');
           }
         });
 
@@ -362,7 +362,7 @@ if (window['$']) {
 
         this.updateStatus('Downloading...');
         $.ajax({
-          url: encodeURI('/apps/jsSMS/rom/homebrew/KunKun & KokoKun.sms'),
+          url: encodeURI(roms.homebrew),
           xhr: function() {
             var xhr = $.ajaxSettings.xhr();
             if (xhr.overrideMimeType !== undefined) {

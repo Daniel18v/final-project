@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <div class="container">
     <!-- Modal -->
     <form id="formSignin" class="up modal fade " action="<?= site_url("/register") ?>" method="post" role="dialog">

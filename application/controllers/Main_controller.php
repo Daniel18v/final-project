@@ -12,11 +12,11 @@ class Main_controller extends MY_Controller {
 
     public function index() {
         $data['title'] = "FreeBird · Juega y a volar";
-        echo $this->templates->render('main::index', ['session' => $this]);
+        echo $this->templates->render('main::index', ['sess' => $this]);
     }
 
     public function chat() {
-        echo $this->templates->render('chat::chat');
+        echo $this->templates->render('chat::chat', ['sess' => $this]);
     }
     public function shop() {
         echo $this->templates->render('main::shop');

@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <?php $this->layout("templates::master") ?>
 
 <?php $this->start('header') ?>
@@ -67,7 +69,7 @@
                                     <h3>NES</h3>
                                     <p>Emulador de Nintendo Entertainment System</p>
                                     <p>
-                                        <button class="btn btm-primary <?= isset($_SESSION['user']) ? "nes" : "login" ?>" type="button"> Jugar</button>
+                                        <button class="btn btm-primary <?= $sess->session->userdata('user') ? "nes" : "login" ?>" type="button"> Jugar</button>
                                     </p>
                                 </div>
                             </div>
@@ -81,7 +83,7 @@
                                     <h3>SMS</h3>
                                     <p>Emulador de Sega Master System</p>
                                     <p>
-                                        <button class="btn btm-primary <?= isset($_SESSION['user']) ? "sms" : "login" ?>" type="button"> Jugar</button>
+                                        <button class="btn btm-primary <?= $sess->session->userdata('user') ? "sms" : "login" ?>" type="button"> Jugar</button>
                                     </p>
                                 </div>
                             </div>

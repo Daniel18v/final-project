@@ -1,4 +1,6 @@
-    <div class="container">
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
+<div class="container">
         <div class="line-height-85 text-center row">
             <div class="col-md-4 col-xs-4">
 

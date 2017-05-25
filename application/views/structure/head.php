@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <meta charset="utf-8">
 <title>FreeBird · Juega y a volar</title>
 <link rel="stylesheet" href="/css/bootstrap.min.css">

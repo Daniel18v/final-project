@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-6-md col-xs-4">
@@ -7,7 +9,7 @@
             </a>
         </div>
 
-        <?php if (!isset($_SESSION['user'])) :?>
+        <?php if (!$sess->session->userdata('user')) :?>
         <div class="col-6-md col-xs-8">
             <p>
                 <button type="button" class="btn btn-sm btn-info pull-right login"><span class="glyphicon glyphicon-log-in"></span>  Iniciar sesión</button>
@@ -16,7 +18,7 @@
             </p>
         </div>
         <?php else: ?>
-                <img src="<?= $_SESSION['avatar'] ?>" class="img-responsive" width="250" height="250"/>
+                <img src="<?= base_url($sess->session->userdata('user')) ?>" class="img-responsive" width="250" height="250"/>
         <?php endif ?>
     </div>
 </div>

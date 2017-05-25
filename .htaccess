@@ -1,7 +1,6 @@
-Redirect 301 http://freebird.ddns.net:3030/ http://freebird.ddns.net/chat
-
-
-RewriteEngine on 
+Options -Indexes
+IndexIgnore *
+RewriteEngine on
 RewriteCond $1 !^(index.php|css|js|images|robots.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

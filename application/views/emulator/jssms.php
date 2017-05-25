@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <?php $this->layout("templates::games") ?>
 
 <?php $this->start('header') ?>
@@ -188,46 +190,42 @@
                     <div class="span8">
                         <div id="emulator">
 
-                        </div>
-
-
                     </div>
 
                 </div>
             </div>
         </div>
-        <script src="../apps/jsSMS/src/setup.js"></script>
-        <script src="../apps/jsSMS/src/sms.js"></script>
-        <script src="../apps/jsSMS/src/utils.js"></script>
-        <script src="../apps/jsSMS/src/sync-client.js"></script>
-        <script src="../apps/jsSMS/src/z80.js"></script>
-        <script src="../apps/jsSMS/src/debugger.js"></script>
-        <script src="../apps/jsSMS/src/vdp.js"></script>
-        <script src="../apps/jsSMS/src/psg.js"></script>
-        <script src="../apps/jsSMS/src/ui.js"></script>
-        <script src="../apps/jsSMS/src/keyboard.js"></script>
-        <script src="../apps/jsSMS/src/ports.js"></script>
-        <script src="../apps/jsSMS/src/compiler/bytecode.js"></script>
-        <script src="../apps/jsSMS/src/compiler/parser.js"></script>
-        <script src="../apps/jsSMS/src/compiler/opcodes-ast.js"></script>
-        <script src="../apps/jsSMS/src/compiler/opcodes-CB.js"></script>
-        <script src="../apps/jsSMS/src/compiler/opcodes-DD-FD.js"></script>
-        <script src="../apps/jsSMS/src/compiler/opcodes-ED.js"></script>
-        <script src="../apps/jsSMS/src/compiler/opcodes.js"></script>
-        <script src="../apps/jsSMS/src/compiler/analyzer.js"></script>
-        <script src="../apps/jsSMS/src/compiler/optimizer.js"></script>
-        <script src="../apps/jsSMS/src/compiler/generator.js"></script>
-        <script src="../apps/jsSMS/src/compiler/recompiler.js"></script>
-        <script src="../apps/jsSMS/lib/esprima.js"></script>
-        <script src="../apps/jsSMS/lib/escodegen.browser.js"></script>
+        <script src="/apps/emulators/jssms/src/setup.js"></script>
+        <script src="/apps/emulators/jssms/src/sms.js"></script>
+        <script src="/apps/emulators/jssms/src/utils.js"></script>
+        <script src="/apps/emulators/jssms/src/sync-client.js"></script>
+        <script src="/apps/emulators/jssms/src/z80.js"></script>
+        <script src="/apps/emulators/jssms/src/debugger.js"></script>
+        <script src="/apps/emulators/jssms/src/vdp.js"></script>
+        <script src="/apps/emulators/jssms/src/psg.js"></script>
+        <script src="/apps/emulators/jssms/src/ui.js"></script>
+        <script src="/apps/emulators/jssms/src/keyboard.js"></script>
+        <script src="/apps/emulators/jssms/src/ports.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/bytecode.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/parser.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/opcodes-ast.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/opcodes-CB.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/opcodes-DD-FD.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/opcodes-ED.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/opcodes.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/analyzer.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/optimizer.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/generator.js"></script>
+        <script src="/apps/emulators/jssms/src/compiler/recompiler.js"></script>
+        <script src="/apps/emulators/jssms/lib/esprima.js"></script>
+        <script src="/apps/emulators/jssms/lib/escodegen.browser.js"></script>
         <script>
-            'use strict';
-            var sms = new JSSMS({
-                'ui': $('#emulator').JSSMSUI({
-                    'Homebrew': [['Rom', '/apps/jsSMS/rom/homebrew/blockhead.sms']]
-                })
-            });
+            $(function() {
+                var sms = new JSSMS({
+                    'ui': $('#emulator').JSSMSUI({'homebrew': '/apps/emulators/jssms/rom/<?= $rom ?>.sms'})
+                });
+            })
         </script>
-        <script src="../apps/jsSMS/src/main.js"></script>
+        <script src="/apps/emulators/jssms/src/main.js"></script>
     </div>
 <?php $this->stop() ?>

@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <div class="container">
     <div class="row">
         <div class="align-middle text-center col-md-12">

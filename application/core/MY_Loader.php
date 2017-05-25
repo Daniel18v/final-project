@@ -1,4 +1,5 @@
-<?php  if (! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+defined("BASEPATH") or exit("No direct script access allowed");
 /**
  * Sparks
  *

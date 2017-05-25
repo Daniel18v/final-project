@@ -1,3 +1,5 @@
+<?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
+
 <div class="container">
     <!-- Modal -->
 <!--    --><?//= form_open_multipart('/registro', 'id="formSignup", class="up modal fade"'); ?>
