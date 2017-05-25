@@ -18,7 +18,7 @@
             </p>
         </div>
         <?php else: ?>
-                <img src="<?= base_url($sess->session->userdata('user')) ?>" class="img-responsive" width="250" height="250"/>
+                <img src="/<?= $sess->session->userdata('avatar') ?>" class="img-responsive" width="250" height="250"/>
         <?php endif ?>
     </div>
 </div>

@@ -3,7 +3,7 @@
 <?php $this->layout("templates::games") ?>
 
 <?php $this->start('header') ?>
-<?php $this->insert("structure::header") ?>
+<?php $this->insert("structure::header", ['sess' => $sess]) ?>
 <?php $this->stop() ?>
 
 <?php $this->start('nav') ?>
