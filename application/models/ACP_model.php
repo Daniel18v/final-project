@@ -8,8 +8,7 @@ class ACP_model extends CI_Model {
         $this->load->database();
     }
 
-    public function insertData($title, $description, $type, $rom, $images) {
-        $data = array('title' => '$title', 'description' => '$description', 'type' => '$type', 'rom' => '$rom', 'images' => '$images');
+    public function insertData($data) {
         $this->db->insert('roms', $data);
     }
 
@@ -18,18 +17,17 @@ class ACP_model extends CI_Model {
         $this->db->delete('roms');
     }
 
-    public function updateData($id, $title, $description, $type, $rom, $images) {
-        $data = array('id' => '$id', 'title' => '$title', 'description' => '$description', 'type' => '$type', 'rom' => '$rom', 'images' => '$images');
-        $this->db->where('id', $id);
+    public function updateData($data) {
+        $this->db->where('id', $data['id']);
         $this->db->update('roms', $data);
     }
 
-    public function selectData($data) {
-        $this->db->where("type", "$data");
+    public function selectData() {
         $query = $this->db->get("roms");
 
         if ($query->num_rows() > 0) {
-            return $query->result_array();
+            header('Content-type: application/json');
+            echo json_encode($query->result_array());
         }
     }
 }

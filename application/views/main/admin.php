@@ -1,7 +1,7 @@
 <?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
 
 <?php $this->layout("templates::master") ?>
-
+<?php require("application/models/ACP_model.php") ?>
 <?php $this->start('header') ?>
 <?php $this->insert("structure::header", ['sess' => $sess]) ?>
 <?php $this->stop() ?>
@@ -19,35 +19,61 @@
         <div class="col-lg-6 col-lg-offset-3">
             <div class="panel panel-info">
                 <div class="panel-heading text-center">
-                    <h3 class="panel-title">Administrador</h3>
-                    <ul class="list-inline nav-bar">
-                        <li><a href="/addRom">Añadir rom</a></li>
-                        <li><a href="/deleteRom">Eliminar rom</a></li>
-                        <li><a href="/updateRom">Modificar rom</a></li>
-                        <li class="dropdown">
-                            <a href="/listroms" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false">Listar Roms <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/#" id="Nintendo">Nintendo</a></li>
-                                <li><a href="/#" id="Master System">Master System</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                    <h3 class="panel-title">Administrador de roms</h3>
+                    <table id="adminRoms" class="display" cellspacing="0" width="100%">
 
-        <div class="col-lg-6 col-lg-offset-3">
-            <div class="panel panel-info">
-                <div class="panel-heading text-center">
-                    <h3 class="panel-title"></h3>
-                    <ul class="list-inline">
-                    </ul>
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>slug</th>
+                            <th>description</th>
+                            <th>type</th>
+                            <th>rom</th>
+                            <th>images</th>
+                        </tr>
+                        </thead>
+
+                        <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>slug</th>
+                            <th>description</th>
+                            <th>type</th>
+                            <th>rom</th>
+                            <th>images</th>
+                        </tr>
+                        </tfoot>
+
+                    </table>
                 </div>
             </div>
         </div>
 
     </div>
-
+    <script>
+        $(document).ready(function () {
+            var datatable = $('#adminRoms').DataTable({
+                ajax: "selectData()",
+                columns: [
+                    {data: "id"},
+                    {data: "title"},
+                    {data: "slug"},
+                    {data: "description"},
+                    {data: "type"},
+                    {data: "rom"},
+                    {data: "images"}
+                ]
+            });
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="application/libraries/DataTables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="css/dataTables.editor.css">
+    <script type="text/javascript" language="javascript"
+            src="application/libraries/DataTables/media/js/jquery.js"></script>
+    <script type="text/javascript" language="javascript"
+            src="application/libraries/DataTables/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.tableTools.js"></script>
+    <script type="text/javascript" language="javascript" src="js/dataTables.editor.js"></script>
 <?php $this->stop() ?>

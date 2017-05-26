@@ -9,7 +9,7 @@ class ACP_controller extends MY_Controller {
     }
 
     public function admin() {
-        echo $this->templates->render('main::admin');
+        echo $this->templates->render('main::admin',['sess' => $this]);
     }
 
 }

@@ -2,7 +2,7 @@
 
 defined("BASEPATH") or exit("No direct script access allowed");
 
-class Games_controller extends MY_Controller {
+class Html5_controller extends MY_Controller {
 
     public function __construct() {
         parent::__construct();

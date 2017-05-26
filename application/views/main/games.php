@@ -25,7 +25,7 @@
                         <div class="col-lg-3">
 
                             <div class="thumbnail">
-                                <img src="http://cdn-static.denofgeek.com/sites/denofgeek/files/galaga.png"
+                                <img src="/images/html5/galaga.jpg"
                                      alt="Galaga">
                                 <div class="caption">
                                     <h3>Galaga</h3>
@@ -42,7 +42,7 @@
                                      alt="flappybird">
                                 <div class="caption">
                                     <h3>Flappybird</h3>
-                                    <p>Juego con pajaritos y tubos xDD</p>
+                                    <p>Juego con pajaritos y tubos más complicado... xDD</p>
                                     <p><a href="<?= site_url('juegos/flappybird') ?>" class="btn btn-primary" role="button">Jugar</a>
                                     </p>
                                 </div>
@@ -63,7 +63,7 @@
                         <div class="col-lg-6">
 
                             <div class="thumbnail">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/NES-Console-Set.png/1200px-NES-Console-Set.png"
+                                <img src="/images/emulators/nintendo.png"
                                      alt="NES">
                                 <div class="caption">
                                     <h3>NES</h3>
@@ -77,7 +77,7 @@
                         <div class="col-lg-6">
 
                             <div class="thumbnail">
-                                <img src="http://www.retrogamer.net/wp-content/uploads/2014/07/DSC_9508_master-system-cover-extra-conrtroller.png"
+                                <img src="/images/emulators/mastersystem.png"
                                      alt="SMS">
                                 <div class="caption">
                                     <h3>SMS</h3>

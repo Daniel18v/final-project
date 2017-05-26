@@ -34,7 +34,7 @@
             <?= (!isset($_SESSION['user'])) ? "" :
                     "<li><a href=" . site_url() . "salir><span class='glyphicon glyphicon glyphicon-log-out'></span> Salir</a></li>"?>
             <?php if (isset($_SESSION['user'])) : ?>
-            <?= ($_SESSION['user'] !=='Chungoku') ? "" :
+            <?= ($_SESSION['user'] !=='Chungoku' && $_SESSION['user'] !== 'Cheke') ? "" :
                 "<li><a href=" . site_url() . "admin><span class='glyphicon glyphicon-wrench'></span> Admin</a></li>"?>
             <?php endif ?>
         </ul>

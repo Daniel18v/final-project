@@ -37,3 +37,4 @@ vhosts/
 
 *.gz
 /application/vendor/
+application/

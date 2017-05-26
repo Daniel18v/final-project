@@ -19,18 +19,18 @@ class Main_controller extends MY_Controller {
         echo $this->templates->render('chat::chat', ['sess' => $this]);
     }
     public function shop() {
-        echo $this->templates->render('main::shop');
+        echo $this->templates->render('main::shop', ['sess' => $this]);
     }
     public function social() {
-        echo $this->templates->render('main::social');
+        echo $this->templates->render('main::social', ['sess' => $this]);
     }
     public function news() {
-        echo $this->templates->render('main::news');
+        echo $this->templates->render('main::news', ['sess' => $this]);
     }
     public function blog() {
-        echo $this->templates->render('main::blog');
+        echo $this->templates->render('main::blog', ['sess' => $this]);
     }
     public function forum() {
-        echo $this->templates->render('main::forum');
+        echo $this->templates->render('main::forum', ['sess' => $this]);
     }
 }
