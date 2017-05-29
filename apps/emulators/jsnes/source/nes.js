@@ -49,7 +49,7 @@ var JSNES = function(opts) {
     this.mmap = null; // set in loadRom()
     this.keyboard = new JSNES.Keyboard();
     
-    this.ui.updateStatus("Ready to load a ROM.");
+    this.ui.updateStatus("Pulsa el pájaro para empezar.");
 };
 
 JSNES.VERSION = "<%= version %>";
@@ -81,9 +81,9 @@ JSNES.prototype = {
                     self.frame();
                 }, this.frameTime);
                 this.resetFps();
-                this.printFps();
+                // this.printFps(); //QUITAR FPS
                 this.fpsInterval = setInterval(function() {
-                    self.printFps();
+                    // self.printFps(); //QUITAR FPS
                 }, this.opts.fpsInterval);
             }
         }
@@ -154,7 +154,7 @@ JSNES.prototype = {
     
     printFps: function() {
         var now = +new Date();
-        var s = 'Running';
+        var s = 'Ejecutándose';
         if (this.lastFpsTime) {
             s += ': '+(
                 this.fpsFrameCount / ((now - this.lastFpsTime) / 1000)
@@ -184,7 +184,7 @@ JSNES.prototype = {
             this.stop();
         }
         
-        this.ui.updateStatus("Loading ROM...");
+        this.ui.updateStatus("Cargando ROM...");
         
         // Load ROM file:
         this.rom = new JSNES.ROM(this);
@@ -200,10 +200,10 @@ JSNES.prototype = {
             this.ppu.setMirroring(this.rom.getMirroringType());
             this.romData = data;
             
-            this.ui.updateStatus("Successfully loaded. Ready to be started.");
+            this.ui.updateStatus("Cargado correctamente. ¡Disfruta del juego!");
         }
         else {
-            this.ui.updateStatus("Invalid ROM!");
+            this.ui.updateStatus("¡Rom no válida!");
         }
         return this.rom.valid;
     },

@@ -10,10 +10,8 @@ class User_model extends CI_Model {
     }
 
     function login($data) {
-//        echo "<pre>" . print_r($data, true) . "</pre>";
         $this->db->where('user', $data['user'])->from('users');
         $query = $this->db->get();
-//        echo "<pre>" . print_r($query->row(), true) . "</pre>";
 
         if ($query->num_rows() > 0) {
             $this->db->where('pass', $data['pass'])->where('user', $data['user'])->from('users');
@@ -22,7 +20,9 @@ class User_model extends CI_Model {
                 $query = $query->row();
                 $recover_data  = array(
                         'user' => $query->user,
-                        'avatar' => $query->avatar
+                        'avatar' => $query->avatar,
+                        'id' => $query->id,
+                        'rol' => $query->rol
                 );
                 $this->session->set_userdata($recover_data);
             } else {
@@ -36,5 +36,18 @@ class User_model extends CI_Model {
     function signup($data) {
         $this->db->insert('users', $data);
         return $data;
+    }
+
+    function check_user($id) {
+        if ($id === NULL) {
+            return FALSE;
+        }
+        $this->db->where('id', $id)->from('users');
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
     }
 }

@@ -11,7 +11,8 @@ class Roms_controller extends MY_Controller {
 
     public function emulator($type = FALSE, $slug = FALSE) {
         $query   = $this->mdl->get_rom($type, $slug);
-        $romName = $query[0]->title;
+        $romName = $query[0];
+//        var_dump($query);
         echo $this->templates->render('emulator::js'.$type, ['sess' => $this, 'rom' => $romName]);
     }
 }

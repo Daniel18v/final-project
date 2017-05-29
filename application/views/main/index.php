@@ -11,7 +11,7 @@
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
-<div class="container-fluid mycontent">
+<div class="container-fluid wrapper">
     <div class="hr-margin-bottom-10"></div>
     <div class="row">
         <div class="col-lg-9 hidden-sm hidden-xs">
@@ -109,7 +109,6 @@
     </div>
 </div>
 </div>
-<div class="hr-margin-bottom-10"></div>
 
 <div>
     <?= $this->insert("structure::models") ?>

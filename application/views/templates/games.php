@@ -18,6 +18,7 @@
 <body class="body">
 
 <?= $this->section("section") ?>
+<div class="push"></div>
 
 <div class="top-footer">
     <?php $this->insert("structure::footer") ?>

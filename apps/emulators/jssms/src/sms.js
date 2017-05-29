@@ -322,7 +322,7 @@ JSSMS.prototype = {
       }
     }
 
-    this.ui.updateStatus('Running');
+    this.ui.updateStatus('Ejecutándose');
   },
 
 

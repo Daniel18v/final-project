@@ -1,0 +1,250 @@
+/* LIGHTS */
+body {
+    text-align: center;
+    /*-webkit-transition: background 0.4s ease-in-out;*/
+    /*-moz-transition: background 0.2s ease-in-out;*/
+    /*-o-transition: background 0.2s ease-in-out;*/
+    transition: background 0.4s ease-in-out;
+}
+
+h2 {
+    color: #000;
+    text-shadow: 0px 0px 30px rgba(255,255,255,1), 0px 0px 10px rgba(255,255,255,1);
+    /*-webkit-transition: color 0.4s ease-in-out;*/
+    /*-moz-transition: color 0.2s ease-in-out;*/
+    /*-o-transition: color 0.2s ease-in-out;*/
+    transition: color 0.4s ease-in-out;
+}
+
+.day-night {
+    width: 44px;
+    height: 44px;
+    margin: 10px auto;
+    font-size: 26px;
+    /*-moz-border-radius: 4px;*/
+    /*-webkit-border-radius: 4px;*/
+    /*-khtml-border-radius: 4px;*/
+    border-radius: 4px;
+    /*background: #E6E6E6;*/
+    border: none;
+    /*color: #CCC; !* old browsers *!*/
+    /*color: rgba(0,0,0,0.1);*/
+    /*-webkit-transition: all 0.4s ease-in-out;*/
+    /*-moz-transition: all 0.2s ease-in-out;*/
+    /*-o-transition: all 0.2s ease-in-out;*/
+    /*transition: all 0.4s ease-in-out;*/
+    /*-moz-box-shadow: inset 0px -2px 0px rgba(0,0,0,0.05);*/
+    /*-webkit-box-shadow: inset 0px -2px 0px rgba(0,0,0,0.05);*/
+    /*box-shadow: inset 0px -2px 0px rgba(0,0,0,0.05);*/
+}
+
+.day-night:hover {
+    /*background: #E0E0E0;*/
+    /*color: #BBB; !* old browsers *!*/
+    /*color: rgba(0,0,0,0.1);*/
+    /*color: #DDEEFF;*/
+    text-shadow: 0px 0px 30px rgba(50,150,255,0.1), 0px 0px 10px rgba(80,180,255,0.1);
+    -moz-box-shadow: inset 0px -2px 0px rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0px -2px 0px rgba(0,0,0,0);
+    box-shadow: inset 0px -2px 0px rgba(0,0,0,0);
+}
+
+.night {
+    background: transparent url("/images/background-dark.jpg") no-repeat top center fixed;
+    background-size: cover;
+}
+
+.night h2 {
+    color: #fff;
+    text-shadow: 0px 0px 30px rgba(0,0,0,1), 0px 0px 10px rgba(0,0,0,1);
+}
+
+.night .day-night {
+    background: #333;
+    color: #FFEE00;
+    text-shadow: 0px 0px 30px rgba(255,195,0,1), 0px 0px 10px rgba(255,195,0,1);
+    -moz-box-shadow: inset 0px -2px 0px rgba(255,255,0,0.1);
+    -webkit-box-shadow: inset 0px -2px 0px rgba(255,255,0,0.1);
+    box-shadow: inset 0px -2px 0px rgba(255,255,0,0.1);
+}
+
+.night .day-night:hover {
+    background: #292929;
+    -moz-box-shadow: inset 0px -2px 0px rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0px -2px 0px rgba(0,0,0,0);
+    box-shadow: inset 0px -2px 0px rgba(0,0,0,0);
+}
+
+.btn-day, .night .btn-night { display: none; }
+.btn-night, .night .btn-day { display: block; }
+
+.span-day, .night .span-night { display: none; }
+.span-night, .night .span-day { display: inline; }
+
+.nes-status {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.btn-transparent {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+}
+.monBotton:before{
+    content: "";
+    width: 60px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: text-top;
+    background-position : center center;
+    background-repeat:no-repeat;
+    background-image : url(/images/freebird.png);
+    background-size: 60px 50px;
+
+}
+
+
+.nes-controls input {
+    margin-left: 5px;
+}
+
+/* IE10 is not tested though */
+a, input, button {
+    -ms-touch-action: none !important;
+}
+
+#emulator > div {
+    text-align: center;
+}
+
+#screen {
+    height: 400px;
+    width: 534px;
+    margin: auto;
+    border: 1px solid #000;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#screen canvas {
+    /*background: #000;*/
+    margin: auto;
+    display: block;
+    image-rendering: -moz-crisp-edges; /* FF 6+ */
+    image-rendering: -webkit-optimize-contrast; /* Webkit */
+    image-rendering: pixelated; /* Blink */
+    -ms-interpolation-mode: nearest-neighbor; /* IE 7+ */
+}
+
+#screen:-webkit-full-screen {
+    height: 100%;
+    width: 100%;
+}
+
+.gamepad {
+    height: 80px;
+    position: relative;
+}
+
+div .direction > div,
+div .buttons > div {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline;
+}
+
+div .direction {
+    background: lightgrey;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.upbtn, .down {
+    background: darkgrey;
+}
+
+.upbtn {
+    border-radius: 40px 0 0 0;
+}
+
+.down {
+    border-radius: 0 0 40px 0;
+}
+
+div .buttons {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+div .buttons .start {
+    background: darkblue;
+    border-radius: 0 40px 40px 0;
+    width: 25px;
+}
+
+.fire1, .fire2 {
+    background: black;
+    margin-left: 10px;
+    border-radius: 40px;
+}
+
+#romSelector {
+    clear: both;
+    margin-top: 80px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 0;
+    }
+}
+
+@media (orientation: portrait) {
+    #screen canvas {
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    #screen canvas {
+        height: 100%;
+        width: auto;
+    }
+}
+
+/*!* Debugger *!*/
+/*div.row-fluid .span8 {*/
+    /*position: relative;*/
+/*}*/
+
+/*#dissambler {*/
+    /*font-family: monospace;*/
+    /*font-size: small;*/
+    /*color: #aaa;*/
+    /*right: 0;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+/*}*/
+
+/*.current {*/
+    /*color: #333;*/
+/*}*/
+
+/*.current code {*/
+    /*background: pink;*/
+    /*border-color: #DD1144;*/
+/*}*/
+
+/*code {*/
+    /*padding: 0 2px;*/
+/*}*/

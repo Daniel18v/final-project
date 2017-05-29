@@ -63,7 +63,7 @@ function JSSMS(opts) {
   this.psg = new JSSMS.SN76489(this);
   this.ports = new JSSMS.Ports(this);
   this.cpu = new JSSMS.Z80(this);
-  this.ui.updateStatus("Ready to load a ROM.");
+  this.ui.updateStatus("Listo para cargar la ROM");
   if (this.soundEnabled) {
     var AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContext;
@@ -98,7 +98,7 @@ JSSMS.prototype = {isRunning:false, cyclesPerLine:0, no_of_scanlines:0, frameSki
       }, fpsInterval);
     }
   }
-  this.ui.updateStatus("Running");
+  this.ui.updateStatus("Ejecutándose");
 }, stop:function() {
   if (DEBUG) {
     clearInterval(this.fpsInterval);
@@ -161,7 +161,7 @@ JSSMS.prototype = {isRunning:false, cyclesPerLine:0, no_of_scanlines:0, frameSki
   this.ui.writeFrame();
 }, printFps:function() {
   var now = JSSMS.Utils.getTimestamp();
-  var s = "Running: " + (this.fpsFrameCount / ((now - this.lastFpsTime) / 1E3)).toFixed(2) + " FPS";
+  var s = "Ejecutándose: " + (this.fpsFrameCount / ((now - this.lastFpsTime) / 1E3)).toFixed(2) + " FPS";
   this.ui.updateStatus(s);
   this.fpsFrameCount = 0;
   this.lastFpsTime = now;
@@ -9628,7 +9628,7 @@ JSSMS.Vdp.prototype = {reset:function() {
   temp = state[2];
   this.counter = temp & 255;
   this.vScrollLatch = temp >> 8 & 255;
-  this.line = temp >> 16 & 65535;
+  this.line = temp >> 16 & 65535
   JSSMS.Utils.copyArrayElements(state, 3, this.vdpreg, 0, 16);
   JSSMS.Utils.copyArrayElements(state, 3 + 16, this.CRAM, 0, 32 * 3);
   this.forceFullRedraw();
@@ -9751,10 +9751,10 @@ if (window["$"]) {
             self.screen.animate({width:SMS_WIDTH + "px", height:SMS_HEIGHT + "px"}, function() {
               $(this).removeAttr("style");
             });
-            self.buttons.zoom.attr("value", "Zoom in");
+            self.buttons.zoom.attr("value", "Dar zoom");
           } else {
             self.screen.animate({width:SMS_WIDTH * 2 + "px", height:SMS_HEIGHT * 2 + "px"});
-            self.buttons.zoom.attr("value", "Zoom out");
+            self.buttons.zoom.attr("value", "Quitar zoom");
           }
           self.zoomed = !self.zoomed;
         });

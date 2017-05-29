@@ -9,8 +9,7 @@ class Emulators_model extends CI_Model {
     }
 
     public function get_rom($type, $slug) {
-        $query = $this->db->select('title')
-                ->where('slug', $slug)
+        $query = $this->db->where('slug', $slug)
                 ->where( 'type',$type)
                 ->get('roms');
         return $query->result();
