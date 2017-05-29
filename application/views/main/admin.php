@@ -10,8 +10,6 @@
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
-    <div class="container-fluid wrapper">
-
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="panel panel-info">

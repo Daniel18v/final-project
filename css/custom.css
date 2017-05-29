@@ -46,8 +46,15 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 100px;
-    background-color: rgba(204, 204, 204, 0.75);
+    /*background-color: rgba(204, 204, 204, 0.75);*/
+    background-color: rgba(200, 200, 200, 0.5);
 }
+
+.carousel-caption h3, .top-footer div h4 {
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+    color: white;
+}
+
 
 .footer {
     background-color: #101010;
@@ -82,7 +89,9 @@ body > .container {
 
 .header {
     margin-bottom: 0;
-    background-color: rgba(204, 204, 204, 0.75);
+    background-color: rgba(200, 200, 200, 0.5);
+
+    /*background-color: rgba(204, 204, 204, 0.75);*/
 }
 
 code {
@@ -130,7 +139,12 @@ code {
     width: 25%;
 }
 
-
+.height-250 {
+    height: 250px;
+}
+.width-250 {
+    width: 250px;
+}
 
 /* FIN DE EXTENSIÓN DE BOOTSTRAP */
 

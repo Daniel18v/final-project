@@ -11,13 +11,15 @@
     <?= $this->section("header") ?>
 </header>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse ">
     <?= $this->section("nav") ?>
 </nav>
 
 <body class="body">
 
-<?= $this->section("section") ?>
+<div class="container-fluid wrapper">
+    <?= $this->section("section") ?>
+</div>
 
 <div class="push"></div>
 

@@ -11,10 +11,8 @@
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
-<div class="container-fluid mycontent">
-    <div class="hr-margin-bottom-10"></div>
-    <div class="row">
-        <?php foreach ($roms as $rom => $values) : ?>
+<div class="row">
+    <?php foreach ($roms as $rom => $values) : ?>
         <div class="col-lg-3">
             <div class="panel panel-info">
 
@@ -25,11 +23,12 @@
                     <div class="row text-center">
                         <div class="col-lg-12">
                             <div class="thumbnail">
-                                <img src="<?= $values['image'] ?>" alt="<?= $values['title'] ?>" class="img-responsive">
+                                <img src="<?= $values['image'] ?>" alt="<?= $values['title'] ?>" class="img-responsive height-250 width-250">
                                 <div class="caption">
                                     <h3><?= $values['title'] ?></h3>
                                     <p class="min-height-90"><?= substr($values['description'], 0, 160) ?></p>
-                                    <p><a href="<?= $values['type'] . "/" . $values['slug'] ?>" class="btn btn-primary" role="button">Jugar</a>
+                                    <p><a href="<?= $values['type']."/".$values['slug'] ?>" class="btn btn-primary"
+                                          role="button">Jugar</a>
                                     </p>
                                 </div>
                             </div>
@@ -39,8 +38,7 @@
                 </div>
             </div>
         </div>
-        <?php endforeach ?>
-    </div>
+    <?php endforeach ?>
 </div>
 
 <?php $this->stop() ?>

@@ -11,7 +11,6 @@
 <?php $this->stop() ?>
 
 <?php $this->start('section') ?>
-<div class="container-fluid wrapper">
 <!--    <h2><span class="span-night">Apagar</span><span class="span-day">Encender</span> la luz</h2>-->
     <h2><?= $rom->title ?></h2>
     <button class="day-night">
@@ -43,7 +42,6 @@
             </div>
         </div>
     </div>
-</div>
 <!--<h2>Controles</h2>-->
 <!--<table id="controls">-->
 <!--    <tr>-->
