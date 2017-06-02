@@ -15,4 +15,7 @@ class ACP_controller extends MY_Controller
         $data = $this->roms->get_roms();
         echo json_encode($data);
     }
+    public function prueba() {
+
+    }
 }

@@ -36,6 +36,8 @@ body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     /*margin: 0 auto -140px; !* the bottom margin is the negative value of the footer's height *!*/
 }
 
@@ -57,8 +59,9 @@ body {
 
 
 .footer {
-    background-color: #101010;
+   background-color: rgba(0, 0, 0, 0.80);
     color: #9d9d9d;
+    border-top: 1px inset #000000;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -148,9 +151,6 @@ code {
 
 /* FIN DE EXTENSIÓN DE BOOTSTRAP */
 
-.panel {
-    margin-top: 20px;
-}
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
@@ -178,7 +178,6 @@ code {
 /* Full-width input fields*/
 .text, input[type=password] {
     width: 100%;
-    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -267,4 +266,19 @@ code {
 
 #myGLCanvas {
     margin: 0 auto;
+}
+
+
+/* PANELS */
+.panel {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.panel-info>.panel-heading {
+    color: #cccccc;
+    border-color: #080808;
+    background-color: rgba(34, 34, 34, 0.90);
+}
+.panel-info {
+    border-color: #101010;
 }

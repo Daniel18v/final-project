@@ -15,6 +15,9 @@ class Main_controller extends MY_Controller {
         echo $this->templates->render('main::index', ['sess' => $this]);
     }
 
+    public function probando() {
+        echo $this->templates->render("main::pruebas", ['sess' => $this]);
+    }
     public function chat() {
         echo $this->templates->render('chat::chat', ['sess' => $this]);
     }
