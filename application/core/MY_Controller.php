@@ -16,6 +16,7 @@ class MY_Controller extends CI_Controller {
         $this->templates->addFolder('chat', APPPATH . '/views/chat');
         $this->templates->addFolder('login', APPPATH . '/views/login');
         $this->templates->addFolder('emulator', APPPATH . '/views/emulator');
+        $this->templates->addFolder('errors', APPPATH . '/views/errors');
     }
 
 }

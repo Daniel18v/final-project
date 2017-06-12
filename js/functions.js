@@ -26,19 +26,4 @@ $(document).ready(function () {
         $('body').toggleClass('night');
     });
 
-    //
-    // $("#start").onclick(function() {
-    //     ajax();
-    // })
-    // /* Login */
-    // function ajax() {
-    //     $.ajax({
-    //         data: [this.user, this.pass],
-    //         url: "/login",
-    //         type: 'post',
-    //         error: function (response) {
-    //             $("#error").html(response);
-    //         }
-    //     });
-    // }
 });

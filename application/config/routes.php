@@ -50,7 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'Main_controller';
-$route['404_override'] = 'errors/page_missing';
+$route['404_override'] = 'Errors_controller/error404';
+$route['prohibido'] = 'Errors_controller/error403';
 $route['translate_uri_dashes'] = FALSE;
 $route['probando'] = 'Main_controller/probando';
 $route['probando/(:any)'] = 'Main_controller/probando/$1';
@@ -70,3 +71,4 @@ $route['salir'] = 'User_controller/logout';
 $route['registro'] = 'User_controller/signup';
 $route['subida'] = 'Upload_controller/upload';
 $route['admin'] = 'ACP_controller/admin';
+$route['admin/blog'] = 'ACP_controller/admin/blog';

@@ -4,54 +4,67 @@ defined("BASEPATH") or exit("No direct script access allowed");
 
 
 class User_controller extends MY_Controller {
+
+    /**
+     * Inherits of MY_Controller and charges the model for this controller.
+     */
     public function __construct() {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->helper('sess');
         $this->load->library('session', 'form');
     }
 
+    /**
+     * Allows sign up in webpage
+     */
     public function signup() {
-        $data = array(
-                'name' => $this->input->post('name'),
-                'user' => $this->input->post('user'),
-                'pass' => md5($this->input->post('pass')),
-                'mail' => $this->input->post('mail'),
-                'avatar' => $this->input->post('userfile')
+
+        $input_data = array('name'   => $this->input->post('name'),
+                            'user'   => $this->input->post('user'),
+                            'pass'   => md5($this->input->post('pass')),
+                            'mail'   => $this->input->post('mail'),
+                            'avatar' => "images/avatars/no-avatar.png",
         );
 
-        $config['upload_path']   = 'images/avatars/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $validate = array('name'   => FILTER_SANITIZE_STRING,
+                          'user'   => FILTER_SANITIZE_STRING,
+                          'mail'   => FILTER_SANITIZE_EMAIL,
+                          'pass'   => FILTER_DEFAULT,
+                          'avatar' => FILTER_DEFAULT,
 
-        $this->load->library('upload', $config);
-        $this->upload->initialize($config);
-        $file = $data['avatar'];
+        );
 
-        if ($data['avatar'] === NULL) {
-            $data['avatar'] = "images/avatars/no-avatar.png";
-        } else if ($this->upload->do_upload('userfile')) {
-            $data = array('upload_data' => $this->upload->data());
-        }
-//        echo "<pre>" .  print_r($data['upload_data'], true) . "</pre>";
+        $data = filter_var_array($input_data, $validate);
 
 
         if ($this->input->post('pass') === $this->input->post('pass-verify')) {
             $sign = $this->user_model->signup($data);
             $this->login($sign);
-            echo $data['avatar'];
-            redirect(base_url());
+            //$jsondata['message'] = "Logueado con éxito";
         } else {
-            redirect(base_url());
+            $jsondata['message'] = "Las contraseñas no coinciden";
         }
+
+        echo json_encode($jsondata);
     }
 
     public function login() {
+        save_uri($this);
         $data = array('user' => $this->input->post('user'), 'pass' => md5($this->input->post('pass')));
-        $this->user_model->login($data);
-        redirect(base_url());
+        $query = $this->user_model->login($data);
+        if ($query) {
+            echo "Logueado con éxito";
+        } else {
+            echo "Se ha producido un fallo";
+        }
+        redirect_back($this);
+
     }
 
     public function logout() {
+        save_uri($this);
         $this->session->sess_destroy();
-        redirect(base_url());
+        redirect_back($this);
     }
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Cocos2d-html5 Show Case - MoonWarriors</title>
+    <meta name="viewport" content="user-scalable=no"/>
+    <meta charset="utf-8"/>
+    <meta name="author" content="html5china"/>
+    <!-- load Cordova -->
+    <script src="cordova.js"></script>
+    <script src="src/app.js"></script>
+    <style>
+        #overlay {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            background-color: #000;
+            top:0;
+            left: 0;
+        }
+
+        #overlay.show {
+            display: flex;
+        }
+
+        #overlay  > * {
+            margin: auto;
+        }
+
+        #msg {
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="background-color:black;">
+<canvas id="gameCanvas" width="320" height="480"></canvas>
+<script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

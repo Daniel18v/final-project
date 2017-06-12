@@ -7,7 +7,7 @@
 
             <!-- Modal content-->
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
                 <div class="modal-header">
 
@@ -30,9 +30,3 @@
         </div>
     </form>
 </div>
-
-<!--<div class="alert alert-danger" role="alert">-->
-<!--    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>-->
-<!--    <span class="sr-only">Error:</span>-->
-<!--    < ?= $sess->session->flashdata('error') ?>-->
-<!--</div>-->

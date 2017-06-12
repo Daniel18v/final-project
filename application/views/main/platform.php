@@ -23,7 +23,7 @@
                     <div class="row text-center">
                         <div class="col-lg-12">
                             <div class="thumbnail">
-                                <img src="<?= $values['image'] ?>" alt="<?= $values['title'] ?>" class="img-responsive height-250 width-250">
+                                <img src="<?=  explode(',',$values['image'])[0] ?>" alt="<?= $values['title'] ?>" class="img-responsive height-250 width-250">
                                 <div class="caption">
                                     <h3><?= $values['title'] ?></h3>
                                     <p class="min-height-90"><?= substr($values['description'], 0, 160) ?></p>

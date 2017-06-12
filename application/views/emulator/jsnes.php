@@ -31,7 +31,7 @@
                             <h4 class="h4"><?= $rom->title ?></h4>
                         </div>
                         <div class="panel-body">
-                            <img src="<?= $rom->image ?>" class="img-responsive center-block"/>
+                            <img src="<?= explode(',',$rom->image)[0]?>" class="img-responsive center-block"/>
 
                             <p><?= $rom->description ?></p>
                         </div>

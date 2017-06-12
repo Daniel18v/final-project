@@ -36,7 +36,7 @@
                             <div class="carousel-caption">
                                 <h3>Flappy Bird</h3>
                                 <p><a href="/juegos/flappybird" class="btn btn-info" role="button">Jugar</a></p>
-                        </div>
+                            </div>
                         </div>
 
                         <div class="item">
@@ -60,8 +60,27 @@
                 </div>
             </div>
         </div>
-    </div>
+        <!-- POST BLOG -->
+        <div class="panel panel-info posted-blog">
+            <div class="pull-left media">
 
+            </div>
+            <div class="media-body">
+                <img id="img-prev" src="/images/roms/nes/Chip_'n_Dale_Rescue_Rangers(3).png" class="img-responsive">
+                <h4 id="title-prev" class="media-heading text-center">Nuevo juego en nuestra sección NES</h4>
+                <p id="description-prev">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
+                    consectetur cupiditate ducimus hic iste maiores, natus nisi nobis numquam omnis pariatur quas qui
+                    tempore veniam voluptatibus? Asperiores id nostrum veritatis?</p>
+
+                <ul class="list-inline list-unstyled">
+                    <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
+                    <li>|</li>
+                    <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+                    <li>|</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-3">
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -73,7 +92,7 @@
                         <h3 class="panel-title">Trabajo de final de curso</h3>
                     </div>
                     <div class="panel-body">
-                        <p>Esta página está es un trabajo de final de curso.<br/>Aún se encuentra en construcción.</p>
+                        <p>Esta página es un trabajo de final de curso.<br/>Aún se encuentra en construcción.</p>
                     </div>
                 </div>
             </div>
@@ -94,7 +113,7 @@
                 <h3 class="panel-title">Chat</h3>
             </div>
             <div class="panel-body">
-                <?= ! $sess->session->userdata('nombre') ? $this->insert("chat::chat", ['sess' => $sess]) : "" ?>
+                <?= !$sess->session->userdata('nombre') ? $this->insert("chat::chat", ['sess' => $sess]) : "" ?>
             </div>
         </div>
     </div>
@@ -102,9 +121,7 @@
 
     </div>
 </div>
-
-
 <div>
-    <?= $this->insert("structure::models") ?>
+    <?= $this->insert("structure::models", ['sess' => $sess]) ?>
 </div>
 <?php $this->stop() ?>

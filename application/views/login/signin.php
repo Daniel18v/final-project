@@ -7,7 +7,7 @@
 
             <!-- Modal content-->
             <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close close-modal" data-dismiss="modal">&times;</button>
                 <div class="modal-header">
 
                     <h4 class="modal-title text-center">Registrarse</h4>

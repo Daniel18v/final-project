@@ -1,6 +1,9 @@
 <?php defined("BASEPATH") or exit("No direct script access allowed"); ?>
 
 <?php $this->layout("templates::games") ?>
+<?php $this->start('header') ?>
+<?php $this->insert("structure::header", ['sess' => $sess]) ?>
+<?php $this->stop() ?>
 <?php $this->start('nav') ?>
 <?php $this->insert("structure::nav") ?>
 <?php $this->stop() ?>
@@ -9,7 +12,8 @@
         <div class="col-lg-3">
         </div>
         <div class="col-lg-5">
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success alert-dismissable fade in" role="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 Para saltar usa la tecla space.
             </div>
         </div>
