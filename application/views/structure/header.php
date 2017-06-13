@@ -17,8 +17,6 @@
                 <button type="button" class="margin-right-5 btn btn-sm btn-danger pull-right signup"><span class="glyphicon glyphicon-new-window"></span> Registrarse</button>
             </p>
         </div>
-        <?php else: ?>
-                <img src="/<?= $sess->session->userdata('avatar') ?>" class="img-responsive" width="250" height="250"/>
         <?php endif ?>
     </div>
 </div>

@@ -1,18 +1,8 @@
 $(document).ready(function () {
     function previewFile() {
-        var preview = $('#img-prev');
-        var file = document.querySelector('input[type=file]').files[0];
-        var reader = new FileReader();
-
-        reader.addEventListener("load", function () {
-            preview.attr("src", reader.result)
-        }, false);
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
+        $('#img-prev').attr("src", $('#image-pub').val());
     }
-    $('input[type=file]').change(function () {
+    $('#image-pub').change(function () {
         previewFile();
     })
     $('#title-pub').on('change keyup', function () {

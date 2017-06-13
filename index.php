@@ -81,6 +81,9 @@ switch (ENVIRONMENT)
     case '192.168.1.104':
 		error_reporting(-1);
 		ini_set('display_errors', 1);
+    case 'aocontrol.animeomega.es':
+		error_reporting(-1);
+		ini_set('display_errors', 1);
 	break;
 
 	case 'testing':

@@ -61,25 +61,26 @@
             </div>
         </div>
         <!-- POST BLOG -->
-        <div class="panel panel-info posted-blog">
-            <div class="pull-left media">
+        <?php foreach ($blogs as $post => $values) : ?>
+            <div class="panel panel-info posted-blog">
+                <div class="pull-left media">
 
-            </div>
-            <div class="media-body">
-                <img id="img-prev" src="/images/roms/nes/Chip_'n_Dale_Rescue_Rangers(3).png" class="img-responsive">
-                <h4 id="title-prev" class="media-heading text-center">Nuevo juego en nuestra sección NES</h4>
-                <p id="description-prev">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto,
-                    consectetur cupiditate ducimus hic iste maiores, natus nisi nobis numquam omnis pariatur quas qui
-                    tempore veniam voluptatibus? Asperiores id nostrum veritatis?</p>
+                </div>
+                <div class="media-body">
+                    <img id="img-prev" src="<?= $values['image'] ?>" class="img-responsive">
+                    <a href="<?= $values['slug'] ?>"><h4 id="title-prev" class="media-heading text-center"><?= $values['title'] ?></h4></a>
+                    <p id="description-prev"><?= $values['description'] ?></p>
 
-                <ul class="list-inline list-unstyled">
-                    <li><span><i class="glyphicon glyphicon-calendar"></i> 2 days, 8 hours </span></li>
-                    <li>|</li>
-                    <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-                    <li>|</li>
-                </ul>
+                    <ul class="list-inline list-unstyled">
+                        <li><span><i class="glyphicon glyphicon-calendar"></i> <?= $values['timestamp'] ?> </span></li>
+                        <li>|</li>
+                        <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
+                        <li>|</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
+
     </div>
     <div class="col-lg-3">
         <div class="panel panel-info">
@@ -120,8 +121,5 @@
     <div class="col-lg-2 col-xs-0">
 
     </div>
-</div>
-<div>
-    <?= $this->insert("structure::models", ['sess' => $sess]) ?>
 </div>
 <?php $this->stop() ?>

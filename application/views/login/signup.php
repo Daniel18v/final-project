@@ -3,7 +3,7 @@
 <div class="container">
     <!-- Modal -->
     <!--    --><? //= form_open_multipart('/registro', 'id="formSignup", class="up modal fade"'); ?>
-    <form id="formSignup" class="up modal fade " action="<?= site_url("/registro") ?>" method="post" role="dialog"
+    <form id="formSignup" class="up modal fade " action="" method="post" role="dialog"
           enctype="multipart/form-data">
         <div class="modal-dialog">
 
@@ -41,6 +41,7 @@
                     <button type="button" data-dismiss="modal" class="btn btn-lg btn-danger">Cancelar</button>
                     <button type="button" id="submit-register" value="upload" class="btn btn-lg btn-success">Registrar
                     </button>
+
                 </div>
             </div>
 
@@ -49,27 +50,48 @@
 </div>
 <script type='text/javascript'>
     /* attach a submit handler to the form */
-    $("#submit-register").click(function() {
-        var formData = {
-            'name': $('input[name=name]').val(),
-            'user': $('input[name=user]').val(),
-            'mail': $('input[name=mail]').val(),
-            'pass': $('input[name=pass]').val(),
-            'pass-verify': $('input[name=pass-verify]').val()
 
-        };
-        //console.log(formData)
-        $.ajax({
-            data: formData,
-            url: document.location.origin + '/registro',
-            type: 'post',
-            success: function (data) {
-                $('#AJAX').html('').append(JSON.parse(data).message);
+    $(document).ready(function () {
+        function registred() {
+            var formData = {
+                'name': $('input[name=name]').val(),
+                'user': $('input[name=user]').val(),
+                'mail': $('input[name=mail]').val(),
+                'pass': $('input[name=pass]').val(),
+                'pass-verify': $('input[name=pass-verify]').val()
+
+            };
+            $.ajax({
+                data: formData,
+                url: document.location.origin + '/registro',
+                type: 'post',
+                success: function (data) {
+                    var status = JSON.parse(data).status;
+                    switch(status){
+                        case 200:
+                            window.location.reload();
+                            break;
+                        case 416:
+                            $('#AJAX').html('').append('El nombre de usuario o el email ya están registrados');
+                            break;
+                        case 418:
+                            $('#AJAX').html('').append('Las contraseñas no coinciden');
+                            break;
+                    }
+
 //                $("#formSignup").modal('hide');
-            }
+                }
 
-        }).done(function(data) {
-            location.reload();
+            })
+        }
+        $("#submit-register").click(function() {
+            registred()
         });
-    });
+        $('#formSignup').keypress(function (e) {
+            if (e.which == 13) {
+                registred();
+            }
+        });
+    })
+
 </script>

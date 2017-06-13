@@ -37,7 +37,3 @@ vhosts/
 
 *.gz
 /application/vendor/
-application/
-
-/apps/scrapping/node_modules
-apps/scrapping

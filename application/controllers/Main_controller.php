@@ -11,6 +11,7 @@ class Main_controller extends MY_Controller {
         parent::__construct();
         $this->load->model('main_model');
         $this->load->library('encryption');
+        $this->load->model('Blog_model', 'mod');
     }
 
     /**
@@ -18,7 +19,9 @@ class Main_controller extends MY_Controller {
      */
     public function index() {
         $data['title'] = "FreeBird · Juega y a volar";
-        echo $this->templates->render('main::index', ['sess' => $this]);
+        $blogs = $this->mod->get_blogs();
+        empty(!$blogs) ? : show_404();
+        echo $this->templates->render('main::index', ['sess' => $this, 'blogs' => $blogs]);
     }
 
     /**

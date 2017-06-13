@@ -45,7 +45,7 @@ var Juego = {
         if(flappy.inWorld == false)
         {
             //Reiniciar = enviar a Game_Over
-            //alert(puntos)
+            this.addCoins();
             this.state.start('Game_Over');
         }
         else if(flappy.position.y >460)
@@ -110,6 +110,22 @@ var Juego = {
         tubos.forEachAlive(function(t){
             t.body.velocity.x = 0;
         }, this);
+    },
+
+    addCoins: function(){
+        if(puntos < 0) {
+            puntos = 0;
+        }
+        $.ajax({
+            url: '/add_coins',
+            data: {"bird_coins": puntos},
+            type: 'POST',
+            dataType: 'json',
+            success: function (coins) {
+                $('#coins a span:first-child ').text(coins);
+            }
+        })
+
     }
 
 };

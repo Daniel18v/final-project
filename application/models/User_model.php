@@ -18,18 +18,20 @@ class User_model extends CI_Model {
             $query = $this->db->get();
             if ($query->num_rows() > 0) {
                 $query = $query->row();
-                $recover_data  = array(
-                        'user' => $query->user,
-                        'avatar' => $query->avatar,
-                        'id' => $query->id,
-                        'rol' => $query->rol
+                $recover_data = array(
+                    'user' => $query->user,
+                    'avatar' => $query->avatar,
+                    'id' => $query->id,
+                    'rol' => $query->rol,
+                    'bird_coins' => $query->bird_coins
                 );
                 $this->session->set_userdata($recover_data);
+                return 200;
             } else {
-                $this->session->set_flashdata('error', 'El usuario no es correcto');
+                return 420;
             }
         } else {
-            $this->session->set_flashdata('error', 'El usuario no es correcto');
+            return 417;
         }
     }
 
@@ -49,5 +51,16 @@ class User_model extends CI_Model {
         } else {
             return FALSE;
         }
+    }
+    function add_coins($data, $user) {
+        $this->db->select(array('bird_coins'))
+            ->where('user',$user)
+            ->get_compiled_select('users', FALSE);
+        $coins_user = (int)$this->db->get()->result_array()[0]['bird_coins'];
+        $data['bird_coins'] =  $data['bird_coins'] * 10;
+        $data['bird_coins'] += $coins_user;
+        echo $data['bird_coins'];
+        $this->db->update('users', $data,  array('user' => $user));
+        $this->session->set_userdata('bird_coins', $data['bird_coins']);
     }
 }
