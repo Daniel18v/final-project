@@ -98,7 +98,7 @@ JSSMS.prototype = {isRunning:false, cyclesPerLine:0, no_of_scanlines:0, frameSki
       }, fpsInterval);
     }
   }
-  this.ui.updateStatus("Ejecutándose");
+  this.ui.updateStatus("Cargado correctamente. ¡Disfruta del juego!");
 }, stop:function() {
   if (DEBUG) {
     clearInterval(this.fpsInterval);

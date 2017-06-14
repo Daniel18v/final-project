@@ -118,7 +118,7 @@ var Juego = {
         }
         $.ajax({
             url: '/add_coins',
-            data: {"bird_coins": puntos},
+            data: {"bird_coins": (puntos * 10)},
             type: 'POST',
             dataType: 'json',
             success: function (coins) {

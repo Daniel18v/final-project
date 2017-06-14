@@ -81,7 +81,7 @@ function JSSMS(opts) {
   this.ports = new JSSMS.Ports(this);
   this.cpu = new JSSMS.Z80(this);
 
-  this.ui.updateStatus('Ready to load a ROM.');
+  this.ui.updateStatus('Pulsa en el pájaro para cargar el juego.');
 
   if (this.soundEnabled) {
     // @todo Move to psg.js.
@@ -322,7 +322,7 @@ JSSMS.prototype = {
       }
     }
 
-    this.ui.updateStatus('Ejecutándose');
+    this.ui.updateStatus('Cargado correctamente. ¡Disfruta del juego!');
   },
 
 
@@ -456,7 +456,7 @@ JSSMS.prototype = {
 
   printFps: function() {
     var now = JSSMS.Utils.getTimestamp();
-    var s = 'Running: ' +
+    var s = 'Ejecutándose: ' +
         (this.fpsFrameCount / ((now - this.lastFpsTime) / 1000)).toFixed(2) + ' FPS';
     this.ui.updateStatus(s);
     this.fpsFrameCount = 0;

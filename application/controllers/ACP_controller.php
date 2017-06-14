@@ -79,7 +79,6 @@ class ACP_controller extends MY_Controller {
         }
 
     }
-
     public function blog_list() {
         $data = $this->blog->get_blogs();
         echo json_encode($data);

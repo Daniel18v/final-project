@@ -25,13 +25,12 @@
                         <ul class="list-inline list-unstyled">
                             <li><span><i class="glyphicon glyphicon-calendar"></i> <?= $blog->timestamp ?> </span></li>
                             <li>|</li>
-                            <span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
-                            <li>|</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Comments -->
+            <?php if ($sess->session->userdata('user')) : ?>
             <div class="row">
                 <div class="col-md-8">
                     <h2 class="page-header">Comentarios</h2>
@@ -41,15 +40,15 @@
                         <article class="row">
                             <div class="col-md-2 col-sm-2 hidden-xs">
                                 <figure class="thumbnail">
-                                    <img class="img-responsive" src="/<?= $values->user_avatar ?>" />
-                                    <figcaption class="text-center"><?= $values->user ?></figcaption>
+                                    <img class="img-responsive" src="<?= $values->user_avatar ?>" />
+                                    <figcaption class="text-center"><a href="<?= "/perfil/" . $values->user ?>"> <?= $values->user ?></a></figcaption>
                                 </figure>
                             </div>
                             <div class="col-md-10 col-sm-10">
                                 <div class="panel panel-default arrow left">
                                     <div class="panel-body">
                                         <header class="text-left">
-                                            <div class="comment-user"><i class="fa fa-user"></i> <?= $values->user ?></div>
+                                            <div class="comment-user"><i class="fa fa-user"></i><a href="<?= "/perfil/" . $values->user ?>"> <?= $values->user ?></a></div>
                                             <time class="comment-date" datetime="<?= $values->timestamp ?>"><i class="fa fa-clock-o"></i> <?= $values->timestamp ?></time>
                                         </header>
                                         <div class="comment-post">
@@ -72,18 +71,25 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <textarea class="form-control counted" name="commentary" placeholder="Escribe tu mensaje" rows="5" style="margin-bottom:10px;"></textarea>
-                                <h6 class="pull-right" id="counter">320 characters remaining</h6>
                                 <button class="btn btn-info" id="send-comment">Comentar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php endif ?>
         </div>
     </div>
 </div>
 <script>
     $(document).ready(function () {
+        $('textarea').keypress(function (e) {
+
+            if (e.which == 13) {
+                commentBlog();
+            }
+
+        });
         function addZero(i) {
             if (i < 10) {
                 i = "0" + i;
@@ -109,21 +115,32 @@
             }
             return  yyyy +'-' + mm+'-'+dd + ' ' + time;
         }
-        $('#send-comment').click(function () {
-            $.ajax({
-                url: window.location.href + '/comment',
-                data: {
-                    commentary: $('textarea[name=commentary]').val(),
-                    timestamp: getTimestamp()
-                },
-                type: 'POST',
-                dataType: 'json',
-                success: function (status) {
-                    if(status == 200) {
-                        window.location.reload();
+        function commentBlog() {
+            if($('textarea[name=commentary]').val().length > 5) {
+                $.ajax({
+                    url: window.location.href + '/comment',
+                    data: {
+                        commentary: $('textarea[name=commentary]').val(),
+                        timestamp: getTimestamp()
+                    },
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (status) {
+                        if(status == 200) {
+                            window.location.reload();
+                        }
                     }
-                }
-            })
+                })
+                $.ajax({
+                    url: '/add_coins_comment',
+                    data: {},
+                    type: 'POST'
+                })
+            }
+
+        }
+        $('#send-comment').click(function () {
+            commentBlog()
         })
 
     })

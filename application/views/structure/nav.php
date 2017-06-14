@@ -14,8 +14,6 @@
 
             <li <?= ($_SERVER['REQUEST_URI'] == "/") ? "class='active'" : "" ?> ><a href="/"><i
                             class="glyphicon glyphicon-home"></i></a></li>
-            <li <?= (strpos($_SERVER['REQUEST_URI'], "/tienda") !== false) ? "class='active'" : "" ?> ><a
-                        href="/tienda">Tienda</a></li>
             <li <?= (strpos($_SERVER['REQUEST_URI'], "/juegos") !== false) ? "class='active'" : "" ?> ><a
                         href="/juegos">Juegos</a></li>
             <li <?= ($_SERVER['REQUEST_URI'] == "/noticias") ? "class='active'" : "" ?> ><a
@@ -44,15 +42,5 @@
             <?php endif ?>
 
         </ul>
-<!--        <form class="navbar-form navbar-right" role="search">-->
-<!--            <div class="form-group input-group">-->
-<!--                <input type="text" class="form-control" placeholder="Buscar...">-->
-<!--                <span class="input-group-btn">-->
-<!--            <button class="btn btn-info" type="button">-->
-<!--              <span class="glyphicon glyphicon-search"></span>-->
-<!--            </button>-->
-<!--          </span>-->
-<!--            </div>-->
-<!--        </form>-->
     </div><!--/.nav-collapse -->
 </div>

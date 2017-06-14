@@ -23,6 +23,9 @@ class Html5_controller extends MY_Controller {
             case "galaga" :
                 echo $this->templates->render("games::galaga", ['sess' => $this]);
                 break;
+            case "spaceship" :
+                echo $this->templates->render("games::spaceship", ['sess' => $this]);
+                break;
             default:
                 echo $this->templates->render('main::games', ['sess' => $this]);
                 break;

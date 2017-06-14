@@ -31,11 +31,27 @@ class Blog_model extends CI_Model
         return $query->result();
     }
 
-    public function get_blogs(){
-        $this->db->order_by('id', 'DESC');
-        $query = $this->db->get("blog");
+    public function get_blogs_index(){
+        $this->db->select('*, COUNT(comments.id_publication) as total_comments');
+        $this->db->join('comments', 'comments.id_publication = blog.id');
+        $this->db->group_by('blog.id');
+        $this->db->order_by('blog.id', 'DESC');
+        $this->db->limit(3);
+        $this->db->from('blog');
+        $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function get_blogs(){
+        $this->db->select('*, COUNT(comments.id_publication) as total_comments');
+        $this->db->join('comments', 'comments.id_publication = blog.id');
+        $this->db->group_by('blog.id');
+        $this->db->order_by('blog.id', 'DESC');
+        $this->db->from('blog');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function insertData($data)
     {
         $this->db->insert('blog', $data);

@@ -142,7 +142,7 @@
             </div>
             <div id="editor">
             </div>
-            <button class="btn btn-success" id="btn-post">Post article</button>
+            <button class="btn btn-success" id="btn-post">Publicar artículo</button>
             <button id="preview" class="btn btn-success">Vista previa</button><br/><br/>
             <div id="rs"></div>
         </div>
@@ -216,7 +216,7 @@
 
                 })
             } else {
-                alert('Rellene todos los campos!!')
+                alert('¡¡Rellene todos los campos!!')
             }
         })
     })

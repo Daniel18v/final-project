@@ -12,23 +12,30 @@
     <div id="galaga" class="console">
         <div class="container-fluid text-center">
             <div class="row">
-                <div class="col-md-3 align-center">
+                <div class="col-lg-4 col-sm-1">
                 </div>
-                <div class="col-md-6 align-center">
-                    <div class="alert alert-success" role="alert">
+                <div class="col-lg-4 col-sm-10">
+                    <div class="alert alert-success alert-dismissable fade in" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         Pulsa 1 para un jugador, 2 para dos jugadores.<br/>
 
                         Para moverse usar las teclas de dirección y Ctrl para disparar.
                     </div>
                 </div>
-                <div class="col-md-3 align-center">
+                <div class="col-lg-4 col-sm-1">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-lg-4 col-sm-1">
+
+                </div>
+                <div class="col-lg-4 col-sm-10">
                     <div>
                         <canvas id="myGLCanvas"/>
                     </div>
+                </div>
+                <div class="col-lg-4 col-sm-1">
+
                 </div>
             </div>
         </div>

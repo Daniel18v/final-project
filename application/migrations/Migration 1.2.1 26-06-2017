@@ -1,1 +1,0 @@
-ALTER TABLE `users` ADD `rol` INT(6) NOT NULL DEFAULT '3' AFTER `id`;

@@ -49,7 +49,7 @@ var JSNES = function(opts) {
     this.mmap = null; // set in loadRom()
     this.keyboard = new JSNES.Keyboard();
     
-    this.ui.updateStatus("Pulsa el pájaro para empezar.");
+    this.ui.updateStatus("Pulsa en el pájaro para empezar.");
 };
 
 JSNES.VERSION = "<%= version %>";
@@ -88,7 +88,7 @@ JSNES.prototype = {
             }
         }
         else {
-            this.ui.updateStatus("There is no ROM loaded, or it is invalid.");
+            this.ui.updateStatus("Este juego no puede ser cargado, o no es válido.");
         }
     },
     

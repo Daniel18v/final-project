@@ -81,7 +81,7 @@ h2 {
 .span-day, .night .span-night { display: none; }
 .span-night, .night .span-day { display: inline; }
 
-.nes-status {
+.nes-status, .sms-status {
     width: 50%;
     margin: 0 auto;
     margin-top: 15px;
@@ -108,7 +108,7 @@ h2 {
 }
 
 
-.nes-controls input {
+.nes-controls input, #controls input {
     margin-left: 5px;
 }
 
@@ -198,7 +198,6 @@ div .buttons .start {
 
 #romSelector {
     clear: both;
-    margin-top: 80px;
 }
 
 

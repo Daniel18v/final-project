@@ -8,29 +8,30 @@
 <?php $this->insert("structure::nav") ?>
 <?php $this->stop() ?>
 <?php $this->start('section') ?>
-    <div class="row">
-        <div class="col-lg-3">
-        </div>
-        <div class="col-lg-5">
-            <div class="alert alert-success alert-dismissable fade in" role="alert">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                Para saltar usa la tecla space.
+    <div class="container-fluid mycontent">
+        <div class="row text-center">
+            <div class="col-lg-4 col-sm-1">
+            </div>
+            <div class="col-lg-4 col-sm-10">
+                <div class="alert alert-success alert-dismissable fade in" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    Para saltar usa la tecla espacio.
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-1">
             </div>
         </div>
-        <div class="col-lg-3">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-4 col-sm-1">
+            </div>
+            <div class="col-lg-4 col-sm-10">
                 <div id="bloque_juego"></div>
+            </div>
+            <div class="col-lg-4 col-sm-1">
+            </div>
         </div>
-        <div class="col-lg-4">
-        </div>
+
     </div>
-
-
 <?php $this->stop() ?>
 <?php $this->start('scripts') ?>
     <script src="/apps/flappybird/lib/phaser.min.js"></script>

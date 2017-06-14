@@ -66,7 +66,7 @@ if (window['$']) {
       // Create UI
       var root = $('<div></div>');
       var screenContainer = $('<div id="screen"></div>');
-      var gamepadContainer = $('<div class="gamepad"><div class="direction"><div class="upbtn"></div><div class="right"></div><div class="left"></div><div class="down"></div></div><div class="buttons"><div class="start"></div><div class="fire1"></div><div class="fire2"></div></div></div>');
+      var gamepadContainer = $('<div class="gamepad" id="gamepad"><div class="direction"><div class="upbtn"></div><div class="right"></div><div class="left"></div><div class="down"></div></div><div class="buttons"><div class="start"></div><div class="fire1"></div><div class="fire2"></div></div></div>');
       var controls = $('<div id="controls"></div>');
 
       // General settings
@@ -133,7 +133,7 @@ if (window['$']) {
       // Buttons
       this.buttons = Object.create(null);
 
-      this.buttons.start = $('<input type="button" value="Iniciar" class="btn btn-primary" >')
+      this.buttons.start = $('<input type="button" value="Iniciar" class="btn btn-danger" >')
         .click(function() {
           if (!self.main.isRunning) {
             self.main.start();
@@ -303,7 +303,7 @@ if (window['$']) {
         this.buttons[i].appendTo(controls);
       }
 
-      this.log = $('<div id="status"></div>');
+      this.log = $('<div id="status" class="sms-status alert alert-success"></div>');
 
       this.screen.appendTo(screenContainer);
       gamepadContainer.appendTo(screenContainer);
@@ -376,7 +376,7 @@ if (window['$']) {
             var data;
 
             if (status === 'error') {
-              self.updateStatus('The selected ROM file could not be loaded.');
+              self.updateStatus('Este juego no puede ser cargado, o no es válido.');
               return;
             }
 
@@ -407,6 +407,7 @@ if (window['$']) {
          } else {
          this.buttons.pause.attr('value', 'resume');
          }*/
+        this.updateStatus('Pulsa en «Iniciar» para iniciar el juego.');
         this.buttons.start.removeAttr('disabled');
         this.buttons.start.attr('value', 'Iniciar');
         this.buttons.reset.removeAttr('disabled');

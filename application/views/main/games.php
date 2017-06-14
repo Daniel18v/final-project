@@ -19,27 +19,28 @@
             </div>
             <div class="panel-body">
                 <div class="row text-center">
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
 
                         <div class="thumbnail">
                             <img src="/images/html5/galaga.jpg"
                                  alt="Galaga">
                             <div class="caption">
                                 <h3>Galaga</h3>
-                                <p>Juego con navecitas y bichos raros XDDDDDD</p>
+                                <p>Clásico juego de naves. La nostalgia recorrerá tu cuerpo al jugar a este juego.</p>
                                 <p><a href="<?= site_url('juegos/galaga') ?>" class="btn btn-primary" role="button">Jugar</a>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
 
                         <div class="thumbnail">
                             <img src="/images/html5/flappybird.jpg"
                                  alt="flappybird">
                             <div class="caption">
                                 <h3>Flappybird</h3>
-                                <p>Juego con pajaritos y tubos más complicado... xDD</p>
+                                <p>La joya de la corona de FreeBird. Aquí podrás conseguir bird-coins siempre que estés registrado.
+                                ¿A qué esperas?</p>
                                 <p><a href="<?= site_url('juegos/flappybird') ?>" class="btn btn-primary" role="button">Jugar</a>
                                 </p>
                             </div>
@@ -60,14 +61,12 @@
                     <div class="col-lg-6">
 
                         <div class="thumbnail">
-                            <img src="/images/emulators/nintendo.png"
+                            <img class="<?= $sess->session->userdata('user') ? "nes" : "login" ?>" src="/images/emulators/nintendo.png"
                                  alt="NES">
                             <div class="caption">
-                                <h3>NES</h3>
-                                <p>Emulador de Nintendo Entertainment System</p>
                                 <p>
-                                    <button class="btn btm-primary <?= $sess->session->userdata('user') ? "nes" : "login" ?>"
-                                            type="button"> Jugar
+                                    <button class="btn btn<?= $sess->session->userdata('user') ? "-success nes" : "-danger login" ?>"
+                                            type="button"> Acceder
                                     </button>
                                 </p>
                             </div>
@@ -76,14 +75,12 @@
                     <div class="col-lg-6">
 
                         <div class="thumbnail">
-                            <img src="/images/emulators/mastersystem.png"
+                            <img class="<?= $sess->session->userdata('user') ? "sms" : "login" ?>" src="/images/emulators/mastersystem.png"
                                  alt="SMS">
                             <div class="caption">
-                                <h3>SMS</h3>
-                                <p>Emulador de Sega Master System</p>
-                                <p>
-                                    <button class="btn btm-primary <?= $sess->session->userdata('user') ? "sms" : "login" ?>"
-                                            type="button"> Jugar
+                                 <p>
+                                    <button class="btn btn<?= $sess->session->userdata('user') ? "-success sms" : "-danger login" ?>"
+                                            type="button"> Acceder
                                     </button>
                                 </p>
                             </div>

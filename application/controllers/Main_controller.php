@@ -19,7 +19,7 @@ class Main_controller extends MY_Controller {
      */
     public function index() {
         $data['title'] = "FreeBird · Juega y a volar";
-        $blogs = $this->mod->get_blogs();
+        $blogs = $this->mod->get_blogs_index();
         empty(!$blogs) ? : show_404();
         echo $this->templates->render('main::index', ['sess' => $this, 'blogs' => $blogs]);
     }
@@ -42,6 +42,8 @@ class Main_controller extends MY_Controller {
      * This method is used in order to show news view.
      */
     public function news() {
-        echo $this->templates->render('main::blog', ['sess' => $this]);
+        $blogs = $this->mod->get_blogs();
+        empty(!$blogs) ? : show_404();
+        echo $this->templates->render('main::news', ['sess' => $this, 'blogs' => $blogs]);
     }
 }

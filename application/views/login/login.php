@@ -2,7 +2,7 @@
 
 <div class="container">
     <!-- Modal -->
-    <form id="formLogin" class="up modal fade " action="" method="post" role="dialog">
+    <form id="formLogin" class="up modal fade " action="<?= site_url() . "/login" ?>" method="post" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -15,19 +15,19 @@
                     <h4 class="modal-title text-center">Iniciar sesión</h4>
                 </div>
                 <div class="modal-body">
-                    <label for="user"><span class="glyphicon glyphicon-user"></span> Usuario</label>
+                    <label for="user"><span class="glyphicon glyphicon-user"></span> Nombre de usuario</label>
                     <input type="text" class="text form-control" placeholder="Introduce un usuario" id="user"
-                           name="user" required>
+                           minlength="3" maxlength="20" name="user" required>
 
-                    <label for="pass"><span class="glyphicon glyphicon-eye-open"></span> Repetir contraseña</label>
+                    <label for="pass"><span class="glyphicon glyphicon-eye-open"></span> Contraseña     &nbsp; </label>
                     <input type="password" class="form-control" placeholder="Introduce contraseña" id="pass" name="pass"
-                           required>
+                           minlength="4" maxlength="20" required>
 
                 </div>
                 <div id="alert-error"></div>
                 <div class="modal-footer text-center">
                     <button type="button" data-dismiss="modal" class="btn btn-lg btn-danger">Cancelar</button>
-                    <button type="button" id="submit-login" class=" btn btn-lg btn-info">Iniciar sesión</button>
+                    <button type="submit" id="submit-login" class=" btn btn-lg btn-info">Iniciar sesión</button>
                 </div>
             </div>
 
@@ -35,7 +35,6 @@
     </form>
 </div>
 <script type='text/javascript'>
-    /* attach a submit handler to the form */
     function login() {
         var formData = {
             'user': $("#user").val(),
@@ -51,26 +50,31 @@
                     case 200:
                         window.location.reload();
                         break;
-                    case 417:
-                        $('#alert-error').html("<div class='alert alert-danger text-center'>La contraseña no es correcta</div>");
+                    case 418:
+                        $('#alert-error').html("<div class='alert alert-danger text-center'>El usuario no está registrado</div>");
                         break;
                     case 420:
-                        $("#formLogin").modal('hide');
-                        $("#formSignup").modal();
+                        $('#alert-error').html("<div class='alert alert-danger text-center'>La contraseña no es correcta</div>")
                         break;
                 }
-
-//                $("#formSignup").modal('hide');
             }
-
         })
     }
     $("#submit-login").click(function () {
-        login();
+        callSubmit()
     });
     $('#formLogin').keypress(function (e) {
         if (e.which == 13) {
-            login();
+            callSubmit()
         }
     });
+    function callSubmit() {
+        $("#formLogin").validate();
+        $("#formLogin").on('submit', function (e) {
+            if ($("#formLogin").valid()) {
+                e.preventDefault();
+                login();
+            }
+        });
+    }
 </script>
