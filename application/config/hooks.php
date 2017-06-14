@@ -17,10 +17,3 @@ $hook['post_controller_constructor'] = array(
         'filename' => 'Login.php',
         'filepath' => 'hooks'
 );
-
-//$hook['pre_controller'] = array(
-//        'class' => 'Maintenance',
-//        'function' => 'index',
-//        'filename' => 'Maintenance.php',
-//        'filepath' => 'hooks',
-//);

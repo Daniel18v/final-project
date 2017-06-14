@@ -1,23 +1,21 @@
 <?php
 defined("BASEPATH") or exit("No direct script access allowed");
 
-class Login {
+class Login extends CI_Hooks {
     private $ci;
 
     public function __construct() {
         $this->ci =& get_instance();
         !$this->ci->load->helper('url') ? $this->ci->load->helper('url') : FALSE;
-
+        $this->ci->load->model('user_model');
     }
 
     public function check_login() {
-
-//        echo "<pre>" . print_r($this->ci->session->userdata('user'), true)  . "</pre>";
-//        if (!$this->ci->session->userdata('user')) {
-//            redirect('/emulador');
-//		} else {
-//            redirect(base_url());
-//        }
+        foreach ($this->ci->config->config['security'] as $key => $value) {
+            if (preg_match($value['url'], $this->ci->uri->uri_string())) {
+                $this->ci->session->userdata('rol') == NULL ? $this->ci->session->set_userdata('rol', 0) : NULL;
+                in_array($this->ci->session->userdata('rol'), $value['rol']) ? : show_403();
+            }
+        }
     }
 }
-

@@ -400,7 +400,7 @@ if ( ! function_exists('show_error'))
 	 * @param	string
 	 * @return	void
 	 */
-	function show_error($message, $status_code = 500, $heading = 'An Error Was Encountered')
+	function show_error($message, $status_code = 500, $heading = 'Ha ocurrido un error')
 	{
 		$status_code = abs($status_code);
 		if ($status_code < 100)
@@ -443,6 +443,15 @@ if ( ! function_exists('show_404'))
 }
 
 // ------------------------------------------------------------------------
+
+if ( ! function_exists('show_403')) {
+
+    function show_403($page = '', $log_error = TRUE) {
+        $_error =& load_class('Exceptions', 'core');
+        $_error->show_403($page, $log_error);
+        exit(4); // EXIT_UNKNOWN_FILE
+    }
+}
 
 if ( ! function_exists('log_message'))
 {

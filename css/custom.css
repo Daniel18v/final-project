@@ -8,7 +8,6 @@ and open the template in the editor.
     Author     : Cheke
 */
 
-
 p {
     padding: 15px;
 }
@@ -27,8 +26,18 @@ html {
 body {
     /* Margin bottom by footer height */
     /*margin-bottom: 60px;*/
-    background: #33ccff url("/images/background.jpg") no-repeat top center fixed;
+    background: transparent url("/images/background.jpg") no-repeat top center fixed;
     background-size: cover;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*margin: 0 auto -140px; !* the bottom margin is the negative value of the footer's height *!*/
 }
 
 .top-footer {
@@ -38,17 +47,42 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 100px;
-    background-color: rgba(204, 204, 204, 0.75);
+    /*background-color: rgba(204, 204, 204, 0.75);*/
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.carousel-caption h3, .top-footer div h4 {
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+    color: #fff;
+}
+
+div h1 {
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+    color: #fff !important;
+    padding-top: 25px;
+    text-align: center;
 }
 
 .footer {
-    background-color: #101010;
+    background-color: rgba(0, 0, 0, 0.80);
     color: #9d9d9d;
+    border-top: 1px inset #000000;
     position: absolute;
     bottom: 0;
     width: 100%;
+    /*height: 40px;*/
     /* Set the fixed height of the footer here */
-   /* background-color: rgba(180, 180, 180, 0.75);*/
+    /* background-color: rgba(180, 180, 180, 0.75);*/
+}
+
+.push {
+    height: 140px; /* .push must be the same height as .footer */
+}
+
+.adjust {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
 }
 
 /* Custom page CSS
@@ -70,14 +104,9 @@ body > .container {
 
 .header {
     margin-bottom: 0;
-    background-color: rgba(204, 204, 204, 0.75);
-}
+    background-color: rgba(200, 200, 200, 0.5);
 
-.mycontent {
-    padding-left:10px;
-    padding-top: 40px;
-    padding-bottom: 200px;
-    background-color: rgba(255, 255, 255, 0.5);
+    /*background-color: rgba(204, 204, 204, 0.75);*/
 }
 
 code {
@@ -90,34 +119,78 @@ code {
 .no-margin {
     margin: 0;
 }
+
 .hr-margin-bottom-10 {
     margin-bottom: 10px;
 }
+
 .hr-margin-top-10 {
     margin-top: 10px;
 }
+
 .padding-right-5 {
     padding-right: 5px;
 }
+
 .margin-right-5 {
     margin-right: 5px;
 }
+
 .align-middle {
     vertical-align: middle !important;
 }
+
 .line-height-40 {
     line-height: 40px;
 }
+
 .line-height-85 {
     line-height: 85px;
 }
+.min-height-20 {
+    min-height: 20px;
+}
+.min-height-80 {
+    min-height: 80px;
+}
 .min-height-90 {
-    min-height:90px;
+    min-height: 90px;
+}
+.min-height-120 {
+    min-height: 120px;
+}
+.width-5 {
+    width: 5%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-50 {
+    width: 25%;
+}
+
+.width-75 {
+    width: 25%;
+}
+
+.height-250 {
+    height: 250px !important;
+}
+
+.width-250 {
+    width: 250px;
+}
+
+/* FIN DE EXTENSIÓN DE BOOTSTRAP */
+
+.avatar {
+    max-width: 40px;
+    margin-top:3px;
 }
 
 
-
-/* FIN DE EXTENSIÓN DE BOOTSTRAP */
 
 .navbar {
     margin-bottom: 0;
@@ -142,11 +215,9 @@ code {
 /* MODELS */
 /* -------------------------------------------------- */
 
-
 /* Full-width input fields*/
 .text, input[type=password] {
     width: 100%;
-    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -187,8 +258,8 @@ code {
     width: 50%; /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button (x) */
-.close {
+/*The Close Button (x) */
+.close-modal {
     z-index: 6;
     position: absolute;
     right: 15px;
@@ -198,8 +269,8 @@ code {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close-modal:hover,
+.close-modal:focus {
     color: #aaa;
     cursor: pointer;
 }
@@ -231,8 +302,199 @@ code {
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* GALAGA */
+/* GALAGA  y FLAPPY */
 
-#myGLCanvas {
+#myGLCanvas, #bloque_juego > canvas{
     margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+/* PANELS */
+.panel {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.panel-info > .panel-heading {
+    color: #cccccc;
+    border-color: #080808;
+    background-color: rgba(34, 34, 34, 0.90);
+    /*min-height: 55px;*/
+}
+
+.panel-info {
+    border-color: #101010;
+    /*min-height: 810px;*/
+}
+
+/* POST BLOG*/
+.posted-blog {
+    padding: 2%;
+}
+
+.posted-blog img {
+    margin-bottom: 10px;
+}
+
+.posted-blog h4 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.posted-blog .media img {
+    width: 60px;
+    height: 60px;
+}
+
+/* ADMIN BLOG */
+
+#editor {
+    max-height: 250px;
+    height: 700px;
+    background-color: white;
+    border-collapse: separate;
+    border: 1px solid rgb(204, 204, 204);
+    padding: 4px;
+    box-sizing: content-box;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    overflow: scroll;
+    outline: none;
+}
+
+#voiceBtn {
+    width: 20px;
+    color: transparent;
+    background-color: transparent;
+    transform: scale(2.0, 2.0);
+    -webkit-transform: scale(2.0, 2.0);
+    -moz-transform: scale(2.0, 2.0);
+    border: transparent;
+    cursor: pointer;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#rs {
+    border: 2px solid black;
+    padding: 2%
+}
+
+div[data-role="editor-toolbar"] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropdown-menu a {
+    cursor: pointer;
+}
+
+/*PUBLICACIÓN CSS*/
+
+.media img {
+    width: 60px;
+    height: 60px;
+}
+
+.hero-unit {
+    padding: 60px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    color: inherit;
+    background-color: #eeeeee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.hero-unit h1 {
+    margin-bottom: 0;
+    font-size: 60px;
+    line-height: 1;
+    color: inherit;
+    letter-spacing: -1px;
+}
+
+.hero-unit li {
+    line-height: 30px;
+}
+
+.btn-blog {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: #e6e6e6;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    border: 1px solid #cccccc;
+    *border: 0;
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    *margin-left: .3em;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.btn-blog:hover, .btn-blog:focus, .btn-blog:active, .btn-blog.active, .btn-blog.disabled, .btn-blog[disabled] {
+    color: #333333;
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9;
+}
+
+.btn-blog:active, .btn-blog.active {
+    background-color: #cccccc \9;
+}
+
+
+
+/* ADMIN TABS */
+.nav-tabs { border-bottom: 2px solid #DDD; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; background: #EDECEC; }
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: #EDECEC; }
+.nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; }
+.tab-content{padding:20px; background: #ededed;}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+
+@media (max-width : 1200px) {
+    .height-250 {
+        height: auto !important;
+    }
+}
+@media (max-width: 768px) {
+    .avatar {
+        display: none;
+    }
 }

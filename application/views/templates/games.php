@@ -17,7 +17,11 @@
 
 <body class="body">
 
+<div class="container-fluid wrapper">
 <?= $this->section("section") ?>
+</div>
+
+<div class="push"></div>
 
 <div class="top-footer">
     <?php $this->insert("structure::footer") ?>
@@ -30,6 +34,9 @@
 <div>
     <?= $this->insert("structure::models") ?>
 </div>
+
+<?= $this->section("scripts") ?>
+
 
 </body>
 </html>

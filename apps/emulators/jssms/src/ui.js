@@ -57,7 +57,7 @@ if (window['$']) {
 
       // Exit if ran from Opera Mini.
       if (Object.prototype.toString.call(window['operamini']) === '[object OperaMini]') {
-        $(parent).html('<div class="alert alert-error"><strong>Oh no!</strong> Your browser can\'t run this emulator. Try the latest version of Firefox, Google Chrome, Opera or Safari!</div>');
+        $(parent).html('<div class="alert alert-error"><strong>¡Oh no!</strong> Tu navegador no soporta este emulador. ¡Prueba con la última versión de Firefox, Google Chrome, Opera o Safari!</div>');
         return;
       }
 
@@ -66,7 +66,7 @@ if (window['$']) {
       // Create UI
       var root = $('<div></div>');
       var screenContainer = $('<div id="screen"></div>');
-      var gamepadContainer = $('<div class="gamepad"><div class="direction"><div class="up"></div><div class="right"></div><div class="left"></div><div class="down"></div></div><div class="buttons"><div class="start"></div><div class="fire1"></div><div class="fire2"></div></div></div>');
+      var gamepadContainer = $('<div class="gamepad" id="gamepad"><div class="direction"><div class="upbtn"></div><div class="right"></div><div class="left"></div><div class="down"></div></div><div class="buttons"><div class="start"></div><div class="fire1"></div><div class="fire2"></div></div></div>');
       var controls = $('<div id="controls"></div>');
 
       // General settings
@@ -97,7 +97,7 @@ if (window['$']) {
       // Screen
       this.screen = $('<canvas width=' + '580px' + ' height=' + '580px' + ' moz-opaque></canvas>');
       this.canvasContext = this.screen[0].getContext('2d', {
-        'alpha': false // See http://wiki.whatwg.org/wiki/CanvasOpaque
+        'alpha': true// See http://wiki.whatwg.org/wiki/CanvasOpaque
       });
 
       // Nearest-neighbour rendering for scaling pixel-art.
@@ -106,7 +106,7 @@ if (window['$']) {
       this.canvasContext['imageSmoothingEnabled'] = false;
 
       if (!this.canvasContext.getImageData) {
-        $(parent).html('<div class="alert alert-error"><strong>Oh no!</strong> Your browser doesn\'t support writing pixels directly to the <code>&lt;canvas&gt;</code> tag. Try the latest version of Firefox, Google Chrome, Opera or Safari!</div>');
+        $(parent).html('<div class="alert alert-error"><strong>Oh no!</strong> Tu navegador no soporta la escritura de píxeles directamente en la etiqueta <code>&lt;canvas&gt;</code>. ¡Prueba con la última versión de Firefox, Google Chrome, Opera o Safari!</div>');
         return;
       }
 
@@ -125,7 +125,7 @@ if (window['$']) {
 
       // Rom selector
       this.romContainer = $('<div id="romSelector"></div>');
-      this.romSelect = $('<button class="btn btn-primary bouton-image monBouton"></button>')
+      this.romSelect = $('<button class="btn-transparent monBotton"></button>')
         .on('click', function() {
           self.loadROM();
         });
@@ -133,19 +133,19 @@ if (window['$']) {
       // Buttons
       this.buttons = Object.create(null);
 
-      this.buttons.start = $('<input type="button" value="Start" class="btn btn-primary" >')
+      this.buttons.start = $('<input type="button" value="Iniciar" class="btn btn-danger" >')
         .click(function() {
           if (!self.main.isRunning) {
             self.main.start();
-            self.buttons.start.attr('value', 'Pause');
+            self.buttons.start.attr('value', 'Pausa');
           } else {
             self.main.stop();
             self.updateStatus('Paused');
-            self.buttons.start.attr('value', 'resume');
+            self.buttons.start.attr('value', 'Seguir');
           }
         });
 
-      this.buttons.reset = $('<input type="button" value="Reset" class="btn" disabled="disabled">')
+      this.buttons.reset = $('<input type="button" value="Reiniciar" class="btn" disabled="disabled">')
         .click(function() {
           if (!self.main.reloadRom()) {
             $(this).attr('disabled', 'disabled');
@@ -166,21 +166,21 @@ if (window['$']) {
       }
 
       if (this.main.soundEnabled) {
-        this.buttons.sound = $('<input type="button" value="Enable sound" class="btn" disabled="disabled">')
+        this.buttons.sound = $('<input type="button" value="Activar sonido" class="btn" disabled="disabled">')
           .click(function() {
             if (self.main.soundEnabled) {
               self.main.soundEnabled = false;
-              self.buttons.sound.attr('value', 'Enable sound');
+              self.buttons.sound.attr('value', 'Activar sonido');
             } else {
               self.main.soundEnabled = true;
-              self.buttons.sound.attr('value', 'Disable sound');
+              self.buttons.sound.attr('value', 'Desactivar sonido');
             }
           });
       }
 
       if (fullscreenSupport) {
         // @todo Add an exit fullScreen button.
-        this.buttons.fullscreen = $('<input type="button" value="Go fullscreen" class="btn">')
+        this.buttons.fullscreen = $('<input type="button" value="Pantalla completa" class="btn">')
           .click(function() {
             var screen = /** @type {HTMLDivElement} */ (screenContainer[0]);
 
@@ -303,7 +303,7 @@ if (window['$']) {
         this.buttons[i].appendTo(controls);
       }
 
-      this.log = $('<div id="status"></div>');
+      this.log = $('<div id="status" class="sms-status alert alert-success"></div>');
 
       this.screen.appendTo(screenContainer);
       gamepadContainer.appendTo(screenContainer);
@@ -360,7 +360,7 @@ if (window['$']) {
       loadROM: function() {
         var self = this;
 
-        this.updateStatus('Downloading...');
+        this.updateStatus('Iniciando...');
         $.ajax({
           url: encodeURI(roms.homebrew),
           xhr: function() {
@@ -376,7 +376,7 @@ if (window['$']) {
             var data;
 
             if (status === 'error') {
-              self.updateStatus('The selected ROM file could not be loaded.');
+              self.updateStatus('Este juego no puede ser cargado, o no es válido.');
               return;
             }
 
@@ -407,17 +407,18 @@ if (window['$']) {
          } else {
          this.buttons.pause.attr('value', 'resume');
          }*/
+        this.updateStatus('Pulsa en «Iniciar» para iniciar el juego.');
         this.buttons.start.removeAttr('disabled');
-        this.buttons.start.attr('value', 'Start');
+        this.buttons.start.attr('value', 'Iniciar');
         this.buttons.reset.removeAttr('disabled');
         if (ENABLE_DEBUGGER) {
           this.buttons.nextStep.removeAttr('disabled');
         }
         if (this.main.soundEnabled) {
           if (this.buttons.sound) {
-            this.buttons.sound.attr('value', 'Disable sound');
+            this.buttons.sound.attr('value', 'Desactivar sonido');
           } else {
-            this.buttons.sound.attr('value', 'Enable sound');
+            this.buttons.sound.attr('value', 'Activar sonido');
           }
         }
       },

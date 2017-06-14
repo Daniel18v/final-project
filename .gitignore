@@ -34,7 +34,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 vhosts/
 
 *.rar
+*.sql
 
 *.gz
 /application/vendor/
-application/
